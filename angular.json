@@ -5,7 +5,13 @@
   "projects": {
     "AeroGo": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "pages-schematic:page": {},
+        "@schematics/angular:component": {
+          "style": "css",
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -92,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d57fe59c-c0f1-43e8-b4cd-6dff2a9ba80d"
   }
 }
