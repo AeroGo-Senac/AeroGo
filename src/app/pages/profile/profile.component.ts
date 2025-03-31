@@ -4,12 +4,12 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { MyProfilleComponent } from '../../components/my-profille/my-profille.component';
 
 @Component({
-  selector: 'app-profille',
-  imports: [ HeaderComponent, MyProfilleComponent, LucideAngularModule],
-  templateUrl: './profille.component.html',
-  styleUrl: './profille.component.css'
+  selector: 'app-profile',
+  imports: [HeaderComponent, MyProfilleComponent, LucideAngularModule],
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.css'
 })
 
-export class ProfilleComponent {
+export class ProfileComponent {
 
 }
