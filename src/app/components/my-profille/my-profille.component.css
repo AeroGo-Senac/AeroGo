@@ -49,7 +49,8 @@ main {
     right: 20px;
 }
 
-.email, .phone{
+.email,
+.phone {
     display: flex;
     gap: 10px;
 }
@@ -106,20 +107,20 @@ main {
     padding: 0px 20px;
 }
 
-.extra{
+.extra {
     flex: 50%;
     display: flex;
     flex-direction: column;
 }
 
-h3{
+h3 {
     color: #000000;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     padding: 0 20px;
 }
 
-span{
+span {
     color: #6B7280;
     font-size: 14px;
 }
