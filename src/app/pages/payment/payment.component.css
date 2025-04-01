@@ -104,6 +104,7 @@ padding: 2rem;
   gap: 16px;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
+  padding: 25px;
 }
 
 .card-details h2{
