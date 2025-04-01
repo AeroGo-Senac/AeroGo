@@ -9,6 +9,7 @@ main {
     border-radius: 10px;
     border: solid 1px #e0e0e0;
     margin-bottom: 20px;
+    border-radius: 12px;
 }
 
 .header-profile {

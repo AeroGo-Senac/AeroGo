@@ -4,9 +4,9 @@
         <h1>Painel de Administração AeroGo</h1>
 
         <div class="btns">
-            <button [class]="modoFormulario ? 'tabs' : 'tab'" (click)="mostrarFormulario()">Cadastrar
-                Voo</button>
-            <button [class]="!modoFormulario ? 'tabs' : 'tab'" (click)="mostrarLista()">Ver Voos</button>
+            <span [class]="modoFormulario ? 'tabs' : 'tab'" (click)="mostrarFormulario()">Cadastrar
+                Voo</span>
+            <span [class]="!modoFormulario ? 'tabs' : 'tab'" (click)="mostrarLista()">Ver Voos</span>
         </div>
     </div>
     @if (modoFormulario) {

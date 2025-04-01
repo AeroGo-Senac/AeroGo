@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .pro {
     background-color: #fff;
 }
@@ -20,29 +26,36 @@
 .btns {
     display: flex;
     gap: 10px;
-    width: 22em;
-    padding: 5px 10px;
+    width: 30em;
+    padding: 0.5em 0;
     border-radius: 5px;
-    background-color: #eef5fb;
-    margin-bottom: 20px;
+    background-color: #F1F5F9;
+    font-weight: 500;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1em 0;
 }
+
 
 .tab {
     border-radius: 10px;
     background-color: #F1F5F9;
-    padding: 0.5rem 1rem;
+    padding: 5px 10px;
     border: none;
     cursor: pointer;
-    font-size: 0.7rem;
+    font-size: 1em;
     color: #64748B;
     border-bottom: 2px solid transparent;
+
 }
 
 .tabs {
     background-color: #fff;
     color: black;
     padding: 3px;
+    padding: 5px 10px;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 6px;
+
 }
