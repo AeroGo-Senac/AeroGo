@@ -1,0 +1,46 @@
+.Adminlist{
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #000000;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+td{
+    color: #000000;
+}
+
+th{
+    border-bottom: 1px solid #64748B;
+    color: #64748B;
+}
+
+.details-button {
+    background-color: #ffffff;
+    border: 1px solid #64748B;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    border-radius: 5px;
+}
+
+p{
+    text-align: center;
+    color: #64748B;
+}
