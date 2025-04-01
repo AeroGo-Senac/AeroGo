@@ -1,8 +1,12 @@
-.info-adm{
+.container {
+    background-color: #eef5fb;
+}
+
+.info-adm {
     padding: 20px;
 }
 
-.info-adm h1{
+.info-adm h1 {
     font-size: 2em;
     margin-bottom: 15px;
     color: #1B0088;

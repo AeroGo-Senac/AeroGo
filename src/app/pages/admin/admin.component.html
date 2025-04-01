@@ -1,12 +1,17 @@
-<div>
+<div class="container">
     <app-header></app-header>
     <div class="info-adm">
         <h1>Painel de Administração AeroGo</h1>
 
         <div class="btns">
-            <button class="tab">Cadastrar Voo</button>
-            <button class="tabs">Ver Voos</button>
+            <button [class]="modoFormulario ? 'tabs' : 'tab'" (click)="mostrarFormulario()">Cadastrar
+                Voo</button>
+            <button [class]="!modoFormulario ? 'tabs' : 'tab'" (click)="mostrarLista()">Ver Voos</button>
         </div>
     </div>
+    @if (modoFormulario) {
+    <app-adminform></app-adminform>
+    } @else {
     <app-adminlist></app-adminlist>
+    }
 </div>
