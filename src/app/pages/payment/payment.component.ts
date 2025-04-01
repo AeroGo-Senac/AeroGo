@@ -8,5 +8,5 @@ import { HeaderComponent } from '../../components/header/header.component';
   styleUrl: './payment.component.css'
 })
 export class PaymentComponent {
-
+  
 }
