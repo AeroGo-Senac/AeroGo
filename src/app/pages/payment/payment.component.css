@@ -1,0 +1,255 @@
+.sub-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.payment-container {
+  margin: 2rem;
+  width: 56rem;
+  height: 39.625rem;
+  background-color: #fff;
+}
+
+.btn-return{
+  display: flex;
+  align-items: center;
+  color: #1B0088;
+  cursor: pointer;
+}
+
+.payment-box{
+display: flex;
+flex-direction: column;
+width: 56rem;
+height: 37.125rem;
+gap: 24px;
+padding: 2rem;
+}
+
+.payment-box h1{
+  font-size: 24px;
+  font-weight: 800;
+  color: #020817;
+}
+
+.content-container{
+  display: flex;
+  width: 52rem;
+  height: 29.625rem;
+  gap: 32px;
+}
+
+.left-column{
+  width: 34.625rem;
+  height: 29.625rem;
+}
+
+.right-column{
+  width: 15.375rem;
+  height: 29.625rem;
+}
+
+.payment-methods{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #020817;
+}
+
+.payment-methods h2{
+  color: #020817;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cards-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 88px;
+  border-radius: 8px;
+  background-color: #fff;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: .5s;
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover{
+  border: 1px solid #1b008873;
+}
+
+.active{
+  border: 1px solid #1B0088;
+}
+
+.card-details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 25px;
+}
+
+.card-details h2{
+  color: #020817;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.card-details-header{
+  width: 494px;
+  height: 28px;
+}
+
+.payment-form{
+  display: flex;
+  flex-direction: column;
+  width: 494px;
+  height: 224px;
+  gap: 16px;
+}
+
+.card-number{
+  display: flex;
+  flex-direction: column;
+  color: #020817;
+}
+
+.card-number input{
+  width: 494px;
+  height: 40px;
+  padding: 8px;
+}
+
+.card-info{
+  display: flex;
+  color: #020817;
+  gap: 16px;
+}
+
+.card-name{
+  display: block;
+}
+
+.card-name input{
+  width: 239px;
+  height: 40px;
+  padding: 8px;
+}
+
+.validity{
+  display: block;
+}
+
+.validity input{
+  width: 111px;
+  height: 40px;
+  padding: 8px;
+}
+
+.cvv input{
+  width: 111px;
+  height: 40px;
+  padding: 8px;
+}
+
+.installments{
+  display: flex;
+  flex-direction: column;
+  color: #020817;
+}
+
+.installments select{
+  width: 494px;
+  height: 40px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.purchase-summary{
+  display: flex;
+  flex-direction: column;
+  width: 15.375rem;
+  height: 23.5rem;
+  padding: 25px;
+  gap: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.purchase-summary h2{
+  color: #020817;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.flight-details{
+  display: block;
+  font-size: 14px;
+  color: #020817;
+}
+
+.flight-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14;
+}
+
+.price-details{
+  margin-bottom: 24px;
+}
+
+.subtotal{
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #020817;
+  margin-top: 17px;
+}
+
+.total{
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #020817;
+}
+
+.txtInstallments{
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.finalize-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 206px;
+  height: 40px;
+  background-color: #ff0083;
+  border-radius: 6px;
+  gap: 10px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.finalize-button:hover{
+  background-color: #ea047a;
+}
