@@ -69,28 +69,35 @@
               <div class="payment-form">
                 <div class="card-number">
                   <label for="cardNumber">Número do Cartão</label>
-                  <input type="text" name="cardNumber" id="cardNumber" placeholder="0000 0000 0000 0000">
+                  <input type="text" name="cardNumber" placeholder="0000 0000 0000 0000" [(ngModel)]="cardNumber">
                 </div>
                 <div class="card-info">
                   <div class="card-name">
                     <label for="cardName">Nome no Cartão</label>
-                    <input type="text" name="cardName" id="cardName" placeholder="Nome conforme o cartão">
+                    <input type="text" name="cardName" id="cardName" placeholder="Nome conforme o cartão" [(ngModel)]="cardName">
                   </div>
                   <div class="validity">
                     <label for="inputValidity">Validade</label>
-                    <input type="text" name="inputValidity" id="inputValidity" placeholder="MM/AA">
+                    <input type="text" name="inputValidity" id="inputValidity" placeholder="MM/AA" [(ngModel)]="inputValidity">
                   </div>
                   <div class="cvv">
                     <label for="inputCVV">CVV</label>
-                    <input type="text" name="inputCVV" id="inputCVV" placeholder="123">
+                    <input type="text" name="inputCVV" id="inputCVV" placeholder="123" [(ngModel)]="inputCVV">
                   </div>
                 </div>
                 <div class="installments">
                   <label for="selInstallments">Parcelas</label>
-                  <select name="selInstallments" id="selInstallments">
-                    <option value="" selected>1x de R$ 6419.00 sem juros</option>
-                    <option value="">2x de R$ 3209.00 sem juros</option>
-                    <option value="">3x de R$ 2139.00 sem juros</option>
+                  <select name="selInstallments" id="selInstallments" (change)="selInstallments($event)">
+                    <option value="6419.00" selected>1x de R$ 6419.00 sem juros</option>
+                    <option value="3209.00">2x de R$ 3209.00 sem juros</option>
+                    <option value="2139.00">3x de R$ 2139.00 sem juros</option>
+                    <option value="1604.00">4x de R$ 1604.00 sem juros</option>
+                    <option value="1283.00">5x de R$ 1283.00 sem juros</option>
+                    <option value="1069.00">6x de R$ 1069.00 sem juros</option>
+                    <option value="917.00">7x de R$ 917.00 sem juros</option>
+                    <option value="802.00">8x de R$ 802.00 sem juros</option>
+                    <option value="713.00">9x de R$ 713.00 sem juros</option>
+                    <option value="641.00">10x de R$ 641.00 sem juros</option>
                   </select>
                 </div>
               </div>
@@ -111,9 +118,8 @@
                       <span>Passageiros:</span> <span>1</span>
                   </div>
               </div>
-            
               <div class="subtotal">
-                <span>Subtotal</span> <span>R$ 6419.00</span>
+                <span>Subtotal</span> <span id="subTotal">R$ {{subtotal}}</span>
               </div>
 
               <div class="price-details">
@@ -124,7 +130,7 @@
                   <p class="txtInstallments">em até 10x sem juros</p>
               </div>
           
-              <button class="finalize-button">
+              <button class="finalize-button" (click)="validate()">
                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_179_126)">
                   <path d="M13.8232 3.33331H3.15658C2.4202 3.33331 1.82324 3.93027 1.82324 4.66665V11.3333C1.82324 12.0697 2.4202 12.6666 3.15658 12.6666H13.8232C14.5596 12.6666 15.1566 12.0697 15.1566 11.3333V4.66665C15.1566 3.93027 14.5596 3.33331 13.8232 3.33331Z" stroke="#F8FAFC" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
@@ -138,6 +144,9 @@
                   </svg>
                   Finalizar Compra
               </button>
+              <div class="txtBox">
+                <p class="txtError">{{txtError}}</p>
+              </div>
           </div>
         </div>
       </div>

@@ -155,6 +155,7 @@ padding: 2rem;
   padding: 8px;
 }
 
+
 .validity{
   display: block;
 }
@@ -243,6 +244,7 @@ padding: 2rem;
   align-items: center;
   width: 206px;
   height: 40px;
+  padding: 20px;
   background-color: #ff0083;
   border-radius: 6px;
   gap: 10px;
@@ -252,4 +254,17 @@ padding: 2rem;
 
 .finalize-button:hover{
   background-color: #ea047a;
+}
+
+.txtBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+}
+
+.txtError{
+  color: red;
+  text-align: center;
 }
