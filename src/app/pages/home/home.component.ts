@@ -8,5 +8,11 @@ import { HeaderComponent } from "../../components/header/header.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  somenteIda: string = '1';
+
+  onChangeIda(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.somenteIda = input.value;
+  }
 
 }
