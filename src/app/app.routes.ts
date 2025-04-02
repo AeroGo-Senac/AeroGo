@@ -6,10 +6,13 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import { AdminComponent } from './pages/admin/admin.component';
 
 export const routes: Routes = [
-  { path: '', component: PaymentComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'payment', component: PaymentComponent },
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent },
+  { path: '**', redirectTo: '' },
+  { path: '', component: HomeComponent },
+
 ];
 
