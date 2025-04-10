@@ -1,22 +1,41 @@
 <div class="container">
   <app-header></app-header>
   <main class="login">
-    <div class="login-box">
-      <h2>Acesse sua conta</h2>
-      <p>Entre para reservar seus voos e acessar ofertas exclusivas</p>
-      <form onsubmit="event.preventDefault();">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="seu@email.com" required>
+    <div class="login-container">
+      <div class="login-card">
+        <h2 class="title">Acesse sua conta</h2>
+        <p class="subtitle">Entre para reservar seus voos e acessar ofertas exclusivas</p>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="password" placeholder="********" required>
+        <form>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="seu@email.com" />
 
-        <a href="#" class="esqueci-senha">Esqueceu sua senha?</a>
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" placeholder="••••••••" />
 
-        <button type="submit" onclick="login()">&#10145; Entrar</button>
-      </form>
-      <p class="cadastro">Não tem uma conta? <a href="#">Cadastre-se aqui</a></p>
+          <div class="forgot-password">
+            <a href="#">Esqueceu sua senha?</a>
+          </div>
+
+          <button type="submit">
+            <span class="icon">⇨</span> Entrar
+          </button>
+        </form>
+
+        <p class="register">
+          Não tem uma conta?
+          <a href="/sig">Cadastre-se aqui</a>
+        </p>
+
+        <div class="demo-info">
+          <strong>Demo:</strong> Para fazer login, use:
+          <div>Email: <code>{{"eduardo.mendess@icloud.com"}}</code></div>
+          <div>Senha: <code>123</code></div>
+        </div>
+      </div>
     </div>
+
+
   </main>
 
 </div>

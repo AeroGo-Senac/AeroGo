@@ -1,0 +1,98 @@
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f6f6f7, #ececee);
+  font-family: 'Segoe UI', Inter, sans-serif;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+.code {
+  font-size: 5rem;
+  color: rgba(26, 0, 128, 0.1);
+  margin: 0;
+  font-weight: 800;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.message {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.route {
+  margin: 1rem 0;
+}
+
+.route code {
+  background: #f0f1ff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  color: #1a0080;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.countdown {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.countdown .seconds {
+  color: #1a0080;
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn.primary {
+  background-color: #1a0080;
+  color: white;
+}
+
+.btn.outline {
+  background: white;
+  border: 2px solid #1a0080;
+  color: #1a0080;
+}
+
+.btn.transparent {
+  background: none;
+  color: #1a0080;
+}
