@@ -1,0 +1,26 @@
+<div class="error-container">
+  <div class="card">
+    <h1 class="code">404</h1>
+    <h2 class="title">Oops! Destino não encontrado</h2>
+    <p class="message">Parece que este voo não está em nossa programação.</p>
+    <div class="route">
+      <code>/signup</code>
+    </div>
+
+    <p class="countdown">
+      Retornando à página inicial em <span class="seconds">{{ seconds }}</span> segundos...
+    </p>
+
+    <div class="buttons">
+      <button class="btn primary" (click)="goHome()">
+        Página Inicial
+      </button>
+      <button class="btn outline" (click)="goBack()">
+        Voltar
+      </button>
+      <button class="btn transparent">
+        Buscar Voos
+      </button>
+    </div>
+  </div>
+</div>

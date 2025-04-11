@@ -9,11 +9,12 @@
     <div class="container-Searching">
       <div class="subcontainer-Searching-input">
         <div class="sel">
-          <input class="input-selIdaVolta" type="radio" id="selIdaVolta" name="opcao" value="1">
+          <input class="input-selIdaVolta" type="radio" id="selIdaVolta" name="opcao" value="1"
+            (change)="onChangeIda($event)">
           <label>Ida e volta</label>
         </div>
         <div class="sel">
-          <input class="input-selIda" type="radio" id="selIda" name="opcao" value="2">
+          <input class="input-selIda" type="radio" id="selIda" name="opcao" value="2" (change)="onChangeIda($event)">
           <label>Somente ida</label>
         </div>
       </div>
@@ -65,7 +66,7 @@
               placeholder="De onde você vai partir?">
           </div>
         </div>
-        <div class="questInfo">
+        <div class="questInfo" [className]="somenteIda == '2' ? 'none-component' : ''">
           <h3>Data de volta</h3>
           <div class="input-info">
             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,4 +170,15 @@
       </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 AeroGo. Todos os direitos reservados.</p>
+      <nav class="footer-nav">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Contato</a>
+      </nav>
+    </div>
+  </footer>
 </div>

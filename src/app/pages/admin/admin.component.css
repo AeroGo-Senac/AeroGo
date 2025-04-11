@@ -1,40 +1,53 @@
-.info-adm{
-    padding: 20px;
+    .container {
+        background-color: #fff;
+        min-height: 100vh;
+    }
+
+    .info-adm {
+        padding: 1em 4em;
+    }
+
+    .info-adm h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #1B0088;
+        font-weight: 600;
+        background-color: #fff;
 }
 
-.info-adm h1{
-    font-size: 2em;
-    margin-bottom: 15px;
-    color: #1B0088;
-    background-color: #fff;
-}
+    .btns {
+        display: flex;
+        gap: 10px;
+        width: 15em;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        background-color: #F1F5F9;
+        font-weight: 500;
+        flex-direction: row;
+        justify-content: space-evenly;
 
-.btns {
-    display: flex;
-    gap: 10px;
-    width: 13em;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #eef5fb;
-}
+    }
 
-.tab {
-    border-radius: 10px;
-    background-color: #F1F5F9;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.7rem;
-    color: #64748B;
-    border-bottom: 2px solid transparent;
-}
 
-.tabs {
-    background-color: #fff;
-    color: black;
-    padding: 3px;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-}
+    .tab {
+        border-radius: 10px;
+        background-color: #F1F5F9;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+        color: #64748B;
+        border-bottom: 2px solid transparent;
+
+    }
+
+    .tabs {
+        background-color: #fff;
+        color: black;
+        padding: 3px;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+
+    }

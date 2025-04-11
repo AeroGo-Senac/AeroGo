@@ -2,19 +2,18 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-<<<<<<< HEAD
-import { AdmComponent } from './pages/adm/adm.component';
-=======
+import { PaymentComponent } from './pages/payment/payment.component';
 import { AdminComponent } from './pages/admin/admin.component';
->>>>>>> 6d7268bf18984c2ced71f91bbf743ba8106851ea
+import { FlightsComponent } from './pages/flights/flights.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
-<<<<<<< HEAD
-  { path: 'adm', component: AdmComponent },
-=======
+  { path: 'payment', component: PaymentComponent },
   { path: 'admin', component: AdminComponent },
->>>>>>> 6d7268bf18984c2ced71f91bbf743ba8106851ea
+  { path: 'flights', component: FlightsComponent },
+  { path: '**', component: NotFoundComponent },
 ];
+
