@@ -11,11 +11,17 @@
                 </a> Meu Perfil</h1>
 
             <div class="btns">
-                <span class="tabs">Dados Pessoais</span>
-                <span class="tab">Documentos</span>
-                <span class="tab">Preferências</span>
+                <span class="tab" [class.tabs]="modoPerfil === 'perfil'" (click)="mostrarPerfil()">Dados Pessoais</span>
+                <span class="tab" [class.tabs]="modoPerfil === 'documentos'" (click)="mostrarDocuments()">Documentos</span>
+                <span class="tab" [class.tabs]="modoPerfil === 'preferencias'" (click)="mostrarPreferences()">Preferências</span>
             </div>
         </div>
     </div>
-    <app-my-profille></app-my-profille>
+    @if (modoPerfil === 'perfil') {
+        <app-my-profille></app-my-profille>
+      } @else if (modoPerfil === 'documentos') {
+        <app-my-documents></app-my-documents>
+      } @else {
+        <app-travel-preferences></app-travel-preferences>
+      }
 </div>
