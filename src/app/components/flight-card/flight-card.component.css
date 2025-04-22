@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: solid 1px #E5E7EB;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  max-width: 1000px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  color: #64748B;
+}
+
+.box-one {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-two {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  gap: 0.7em;
+}
+
+.ori-dest {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+}
+
+.airplane {
+  width: 450px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: solid 1.5px #64748B;
+}
+
+.flight-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.line {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #0171e1;
+  border-top: 5px solid red;
+  border-left: 5px solid red;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite both;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.classes {
+  color: #020817
+}
+
+.class-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.class-item {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #E2E8F0;
+  width: auto;
+  padding: 0.5em 4em;
+  border-radius: 8px;
+  justify-content: center;
+  animation: 1s linear infinite;
+
+}

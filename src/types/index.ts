@@ -101,4 +101,4 @@ type Payment = {
   updated_at: Date;
 };
 
-export type { Payment, BookingPackage, Booking, Package, SeatClass, Flight, Aircraft, Airport, User };
+export type { Payment, BookingPackage, Booking, Package, SeatClass, Flight, Aircraft, Airport, User, SeatClassType };
