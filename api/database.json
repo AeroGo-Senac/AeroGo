@@ -1,0 +1,517 @@
+{
+  "users": [
+    {
+      "id": "831b5334-e62f-4470-acaa-d02edc6e9100",
+      "email": "alice@example.com",
+      "name": "Alice Johnson",
+      "password_hash": "hashed_password_1",
+      "is_admin": true,
+      "created_at": "2025-04-22T22:41:14.195474",
+      "updated_at": "2025-04-22T22:41:14.195493"
+    },
+    {
+      "id": "894d77aa-c56a-4de8-8081-ca1499b7816a",
+      "email": "bob@example.com",
+      "name": "Bob Smith",
+      "password_hash": "hashed_password_2",
+      "is_admin": false,
+      "created_at": "2025-04-22T22:41:14.195597",
+      "updated_at": "2025-04-22T22:41:14.195613"
+    },
+    {
+      "id": "6d9bc57d-c62f-40d6-ba9c-56347ee17bea",
+      "email": "carol@example.com",
+      "name": "Carol White",
+      "password_hash": "hashed_password_3",
+      "is_admin": false,
+      "created_at": "2025-04-22T22:41:14.195711",
+      "updated_at": "2025-04-22T22:41:14.195715"
+    }
+  ],
+  "airports": [
+    {
+      "id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
+      "code": "JFK",
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "country": "USA",
+      "created_at": "2025-04-22T22:41:14.195940",
+      "updated_at": "2025-04-22T22:41:14.195948"
+    },
+    {
+      "id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
+      "code": "GRU",
+      "name": "S\u00e3o Paulo/Guarulhos International Airport",
+      "city": "S\u00e3o Paulo",
+      "country": "Brazil",
+      "created_at": "2025-04-22T22:41:14.196161",
+      "updated_at": "2025-04-22T22:41:14.196165"
+    },
+    {
+      "id": "e92c2dbc-2f3d-488e-94cf-e6abe38be6aa",
+      "code": "LHR",
+      "name": "Heathrow Airport",
+      "city": "London",
+      "country": "UK",
+      "created_at": "2025-04-22T22:41:14.196295",
+      "updated_at": "2025-04-22T22:41:14.196301"
+    }
+  ],
+  "aircraft": [
+    {
+      "id": "c7d7f6a4-b2cc-4d68-a47f-fad898ff4963",
+      "model": "Airbus A320",
+      "economic_seats": 150,
+      "premium_seats": 24,
+      "executive_seats": 12,
+      "created_at": "2025-04-22T22:41:14.196644",
+      "updated_at": "2025-04-22T22:41:14.196647"
+    },
+    {
+      "id": "58407ba1-77cc-49de-b3a1-20ca549a2cc3",
+      "model": "Boeing 737",
+      "economic_seats": 180,
+      "premium_seats": 30,
+      "executive_seats": 18,
+      "created_at": "2025-04-22T22:41:14.196669",
+      "updated_at": "2025-04-22T22:41:14.196671"
+    },
+    {
+      "id": "3050b36d-eefe-4258-9277-b0de04f91097",
+      "model": "Embraer E195",
+      "economic_seats": 120,
+      "premium_seats": 20,
+      "executive_seats": 8,
+      "created_at": "2025-04-22T22:41:14.196679",
+      "updated_at": "2025-04-22T22:41:14.196680"
+    }
+  ],
+  "flights": [
+    {
+      "id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "flight_number": "AA101",
+      "origin_airport_id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
+      "destination_airport_id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
+      "departure_date": "2025-04-21",
+      "departure_time": "14:30",
+      "arrival_date": "2025-04-21",
+      "arrival_time": "22:15",
+      "aircraft_id": "c7d7f6a4-b2cc-4d68-a47f-fad898ff4963",
+      "created_at": "2025-04-22T22:41:14.196935",
+      "updated_at": "2025-04-22T22:41:14.196937"
+    },
+    {
+      "id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "flight_number": "BA202",
+      "origin_airport_id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
+      "destination_airport_id": "e92c2dbc-2f3d-488e-94cf-e6abe38be6aa",
+      "departure_date": "2025-04-20",
+      "departure_time": "09:00",
+      "arrival_date": "2025-04-20",
+      "arrival_time": "18:30",
+      "aircraft_id": "58407ba1-77cc-49de-b3a1-20ca549a2cc3",
+      "created_at": "2025-04-22T22:41:14.196969",
+      "updated_at": "2025-04-22T22:41:14.196971"
+    },
+    {
+      "id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "flight_number": "LA303",
+      "origin_airport_id": "e92c2dbc-2f3d-488e-94cf-e6abe38be6aa",
+      "destination_airport_id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
+      "departure_date": "2025-04-19",
+      "departure_time": "22:45",
+      "arrival_date": "2025-04-20",
+      "arrival_time": "05:30",
+      "aircraft_id": "3050b36d-eefe-4258-9277-b0de04f91097",
+      "created_at": "2025-04-22T22:41:14.196994",
+      "updated_at": "2025-04-22T22:41:14.196995"
+    }
+  ],
+  "seat_classes": [
+    {
+      "id": "116a1c63-11ad-4e1c-b998-1d6efcd8cfad",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "type": "economic",
+      "available_seats": 47,
+      "price": 639.45,
+      "created_at": "2025-04-22T22:41:35.460865",
+      "updated_at": "2025-04-22T22:41:35.460872"
+    },
+    {
+      "id": "3532dd9d-003a-481f-9f9f-e54df0b74f2c",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "type": "premium",
+      "available_seats": 28,
+      "price": 327.08,
+      "created_at": "2025-04-22T22:41:35.461021",
+      "updated_at": "2025-04-22T22:41:35.461023"
+    },
+    {
+      "id": "a8602641-3917-4d02-bb89-bc3796af65c1",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "type": "executive",
+      "available_seats": 35,
+      "price": 678.61,
+      "created_at": "2025-04-22T22:41:35.461202",
+      "updated_at": "2025-04-22T22:41:35.461205"
+    },
+    {
+      "id": "d7ac4ac2-d3af-4336-927b-37d2053ae4d1",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "type": "economic",
+      "available_seats": 34,
+      "price": 538.16,
+      "created_at": "2025-04-22T22:41:35.461350",
+      "updated_at": "2025-04-22T22:41:35.461358"
+    },
+    {
+      "id": "6ae0259d-66cb-4784-a20a-759324bd3104",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "type": "premium",
+      "available_seats": 50,
+      "price": 504.5,
+      "created_at": "2025-04-22T22:41:35.461491",
+      "updated_at": "2025-04-22T22:41:35.461496"
+    },
+    {
+      "id": "3e804e53-2799-4a35-abfb-dd3f1fec894d",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "type": "executive",
+      "available_seats": 48,
+      "price": 325.13,
+      "created_at": "2025-04-22T22:41:35.461524",
+      "updated_at": "2025-04-22T22:41:35.461526"
+    },
+    {
+      "id": "3569d108-1c03-4e71-973d-cd9205a12039",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "type": "economic",
+      "available_seats": 47,
+      "price": 991.59,
+      "created_at": "2025-04-22T22:41:35.461699",
+      "updated_at": "2025-04-22T22:41:35.461701"
+    },
+    {
+      "id": "3cc25a01-3b93-437f-a469-0a62b8451c8e",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "type": "premium",
+      "available_seats": 18,
+      "price": 236.56,
+      "created_at": "2025-04-22T22:41:35.461946",
+      "updated_at": "2025-04-22T22:41:35.461949"
+    },
+    {
+      "id": "9fd4987e-b1c0-4251-b421-883a91913c9d",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "type": "executive",
+      "available_seats": 48,
+      "price": 268.98,
+      "created_at": "2025-04-22T22:41:35.462120",
+      "updated_at": "2025-04-22T22:41:35.462125"
+    }
+  ],
+  "packages": [
+    {
+      "id": "d9deeb13-c462-4759-8696-6713549cddc1",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "name": "Package 1",
+      "description": "Package 1 description for flight AA101",
+      "price": 130.19,
+      "created_at": "2025-04-22T22:41:35.462463",
+      "updated_at": "2025-04-22T22:41:35.462467"
+    },
+    {
+      "id": "c69a57eb-6944-472d-bb86-dfd1638cfcdf",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "name": "Package 2",
+      "description": "Package 2 description for flight AA101",
+      "price": 227.28,
+      "created_at": "2025-04-22T22:41:35.462497",
+      "updated_at": "2025-04-22T22:41:35.462498"
+    },
+    {
+      "id": "7dc0cbc4-8f90-4c1d-8963-09a97d07c25b",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "name": "Package 1",
+      "description": "Package 1 description for flight BA202",
+      "price": 233.0,
+      "created_at": "2025-04-22T22:41:35.462510",
+      "updated_at": "2025-04-22T22:41:35.462512"
+    },
+    {
+      "id": "ab4fe6b4-2216-480d-a10b-a0d6b36538d6",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "name": "Package 2",
+      "description": "Package 2 description for flight BA202",
+      "price": 212.29,
+      "created_at": "2025-04-22T22:41:35.462522",
+      "updated_at": "2025-04-22T22:41:35.462523"
+    },
+    {
+      "id": "7c75b249-41d8-41ef-9087-d87041667650",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "name": "Package 1",
+      "description": "Package 1 description for flight LA303",
+      "price": 269.73,
+      "created_at": "2025-04-22T22:41:35.462533",
+      "updated_at": "2025-04-22T22:41:35.462535"
+    },
+    {
+      "id": "5185459f-8859-44a6-9138-4fbc1d38343a",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "name": "Package 2",
+      "description": "Package 2 description for flight LA303",
+      "price": 245.66,
+      "created_at": "2025-04-22T22:41:35.462572",
+      "updated_at": "2025-04-22T22:41:35.462574"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "54daca4c-07aa-454f-b511-07013d2910e6",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "user_id": "831b5334-e62f-4470-acaa-d02edc6e9100",
+      "seat_class_type": "executive",
+      "seat_number": "12C",
+      "booking_date": "2025-04-22T22:41:35.462768",
+      "status": "cancelled",
+      "total_price": 326.1,
+      "created_at": "2025-04-22T22:41:35.462774",
+      "updated_at": "2025-04-22T22:41:35.462776"
+    },
+    {
+      "id": "2c96a74d-8381-4328-a737-5360abbb0be8",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "user_id": "831b5334-e62f-4470-acaa-d02edc6e9100",
+      "seat_class_type": "premium",
+      "seat_number": "28C",
+      "booking_date": "2025-04-22T22:41:35.462814",
+      "status": "pending",
+      "total_price": 872.8,
+      "created_at": "2025-04-22T22:41:35.462817",
+      "updated_at": "2025-04-22T22:41:35.462819"
+    },
+    {
+      "id": "789e29ff-6ad2-47a8-8479-9faaad5fc413",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "user_id": "831b5334-e62f-4470-acaa-d02edc6e9100",
+      "seat_class_type": "economic",
+      "seat_number": "18B",
+      "booking_date": "2025-04-22T22:41:35.462851",
+      "status": "pending",
+      "total_price": 538.95,
+      "created_at": "2025-04-22T22:41:35.462854",
+      "updated_at": "2025-04-22T22:41:35.462856"
+    },
+    {
+      "id": "695a17e5-e7d5-4b8a-98ae-4426965ab173",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "user_id": "894d77aa-c56a-4de8-8081-ca1499b7816a",
+      "seat_class_type": "executive",
+      "seat_number": "11B",
+      "booking_date": "2025-04-22T22:41:35.462867",
+      "status": "cancelled",
+      "total_price": 515.98,
+      "created_at": "2025-04-22T22:41:35.462870",
+      "updated_at": "2025-04-22T22:41:35.462872"
+    },
+    {
+      "id": "c11ac5e1-69e9-45b2-9e30-422da12f4766",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "user_id": "894d77aa-c56a-4de8-8081-ca1499b7816a",
+      "seat_class_type": "premium",
+      "seat_number": "15C",
+      "booking_date": "2025-04-22T22:41:35.462882",
+      "status": "confirmed",
+      "total_price": 1428.72,
+      "created_at": "2025-04-22T22:41:35.462885",
+      "updated_at": "2025-04-22T22:41:35.462887"
+    },
+    {
+      "id": "c84a6a6c-98fc-4430-978b-91907f6b1e23",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "user_id": "894d77aa-c56a-4de8-8081-ca1499b7816a",
+      "seat_class_type": "executive",
+      "seat_number": "1C",
+      "booking_date": "2025-04-22T22:41:35.462896",
+      "status": "cancelled",
+      "total_price": 829.81,
+      "created_at": "2025-04-22T22:41:35.462899",
+      "updated_at": "2025-04-22T22:41:35.462901"
+    },
+    {
+      "id": "fd22ee0f-d9d8-4b83-b1b9-e08c54e2b65a",
+      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
+      "user_id": "6d9bc57d-c62f-40d6-ba9c-56347ee17bea",
+      "seat_class_type": "economic",
+      "seat_number": "24A",
+      "booking_date": "2025-04-22T22:41:35.462913",
+      "status": "confirmed",
+      "total_price": 1055.82,
+      "created_at": "2025-04-22T22:41:35.462916",
+      "updated_at": "2025-04-22T22:41:35.462918"
+    },
+    {
+      "id": "ef836886-e0ca-468f-8631-1330c315dc62",
+      "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+      "user_id": "6d9bc57d-c62f-40d6-ba9c-56347ee17bea",
+      "seat_class_type": "economic",
+      "seat_number": "20C",
+      "booking_date": "2025-04-22T22:41:35.462931",
+      "status": "confirmed",
+      "total_price": 910.57,
+      "created_at": "2025-04-22T22:41:35.462936",
+      "updated_at": "2025-04-22T22:41:35.462939"
+    },
+    {
+      "id": "ba6d5145-c5ba-4bc5-bacb-6d25bce7847e",
+      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "user_id": "6d9bc57d-c62f-40d6-ba9c-56347ee17bea",
+      "seat_class_type": "economic",
+      "seat_number": "5A",
+      "booking_date": "2025-04-22T22:41:35.462971",
+      "status": "pending",
+      "total_price": 1317.59,
+      "created_at": "2025-04-22T22:41:35.462975",
+      "updated_at": "2025-04-22T22:41:35.462976"
+    }
+  ],
+  "booking_packages": [
+    {
+      "booking_id": "54daca4c-07aa-454f-b511-07013d2910e6",
+      "package_id": "d9deeb13-c462-4759-8696-6713549cddc1",
+      "created_at": "2025-04-22T22:41:35.463115"
+    },
+    {
+      "booking_id": "2c96a74d-8381-4328-a737-5360abbb0be8",
+      "package_id": "ab4fe6b4-2216-480d-a10b-a0d6b36538d6",
+      "created_at": "2025-04-22T22:41:35.463124"
+    },
+    {
+      "booking_id": "789e29ff-6ad2-47a8-8479-9faaad5fc413",
+      "package_id": "7c75b249-41d8-41ef-9087-d87041667650",
+      "created_at": "2025-04-22T22:41:35.463134"
+    },
+    {
+      "booking_id": "c11ac5e1-69e9-45b2-9e30-422da12f4766",
+      "package_id": "7dc0cbc4-8f90-4c1d-8963-09a97d07c25b",
+      "created_at": "2025-04-22T22:41:35.463146"
+    },
+    {
+      "booking_id": "c84a6a6c-98fc-4430-978b-91907f6b1e23",
+      "package_id": "7c75b249-41d8-41ef-9087-d87041667650",
+      "created_at": "2025-04-22T22:41:35.463151"
+    },
+    {
+      "booking_id": "c84a6a6c-98fc-4430-978b-91907f6b1e23",
+      "package_id": "5185459f-8859-44a6-9138-4fbc1d38343a",
+      "created_at": "2025-04-22T22:41:35.463153"
+    },
+    {
+      "booking_id": "ba6d5145-c5ba-4bc5-bacb-6d25bce7847e",
+      "package_id": "7c75b249-41d8-41ef-9087-d87041667650",
+      "created_at": "2025-04-22T22:41:35.463161"
+    }
+  ],
+  "payments": [
+    {
+      "id": "54e9cda9-1aeb-42e8-ac58-b910900d551f",
+      "booking_id": "54daca4c-07aa-454f-b511-07013d2910e6",
+      "amount": 326.1,
+      "payment_date": "2025-04-22T22:41:35.463319",
+      "payment_method": "credit_card",
+      "status": "pending",
+      "transaction_id": "9c9f2e00-33d2-474c-b3cd-44a52f88abd9",
+      "created_at": "2025-04-22T22:41:35.463333",
+      "updated_at": "2025-04-22T22:41:35.463335"
+    },
+    {
+      "id": "b896f4be-31fd-4e50-b22e-58567e4a2a72",
+      "booking_id": "2c96a74d-8381-4328-a737-5360abbb0be8",
+      "amount": 872.8,
+      "payment_date": "2025-04-22T22:41:35.463347",
+      "payment_method": "paypal",
+      "status": "completed",
+      "transaction_id": "6dbeb0f0-a632-4899-a37a-865d1db1869f",
+      "created_at": "2025-04-22T22:41:35.463360",
+      "updated_at": "2025-04-22T22:41:35.463362"
+    },
+    {
+      "id": "c5da3ded-d9c9-43f7-a6a2-590a379a7768",
+      "booking_id": "789e29ff-6ad2-47a8-8479-9faaad5fc413",
+      "amount": 538.95,
+      "payment_date": "2025-04-22T22:41:35.463369",
+      "payment_method": "pix",
+      "status": "failed",
+      "transaction_id": "371edfb4-b12b-40a8-890b-f91f04b10e3a",
+      "created_at": "2025-04-22T22:41:35.463385",
+      "updated_at": "2025-04-22T22:41:35.463387"
+    },
+    {
+      "id": "39dbcacd-a432-43fd-a77e-97da5b80814f",
+      "booking_id": "695a17e5-e7d5-4b8a-98ae-4426965ab173",
+      "amount": 515.98,
+      "payment_date": "2025-04-22T22:41:35.463394",
+      "payment_method": "paypal",
+      "status": "completed",
+      "transaction_id": "bf81c1a3-42c5-487f-a29e-8a810ac658d0",
+      "created_at": "2025-04-22T22:41:35.463403",
+      "updated_at": "2025-04-22T22:41:35.463404"
+    },
+    {
+      "id": "06613519-9b01-4e0e-b18b-3080187f33ff",
+      "booking_id": "c11ac5e1-69e9-45b2-9e30-422da12f4766",
+      "amount": 1428.72,
+      "payment_date": "2025-04-22T22:41:35.463412",
+      "payment_method": "credit_card",
+      "status": "failed",
+      "transaction_id": "fac0fcbd-1597-4364-a010-be47b9e615fb",
+      "created_at": "2025-04-22T22:41:35.463421",
+      "updated_at": "2025-04-22T22:41:35.463423"
+    },
+    {
+      "id": "f8c93724-248a-4491-a51d-f5ecc78456c9",
+      "booking_id": "c84a6a6c-98fc-4430-978b-91907f6b1e23",
+      "amount": 829.81,
+      "payment_date": "2025-04-22T22:41:35.463432",
+      "payment_method": "pix",
+      "status": "completed",
+      "transaction_id": "ab91348d-b2a9-4afe-835f-af088d42d18f",
+      "created_at": "2025-04-22T22:41:35.463441",
+      "updated_at": "2025-04-22T22:41:35.463443"
+    },
+    {
+      "id": "30b19382-fd33-48f8-9cd1-947a2e4419fe",
+      "booking_id": "fd22ee0f-d9d8-4b83-b1b9-e08c54e2b65a",
+      "amount": 1055.82,
+      "payment_date": "2025-04-22T22:41:35.463450",
+      "payment_method": "pix",
+      "status": "failed",
+      "transaction_id": "3335c44a-cb9c-4726-978a-e40b05bcb2ba",
+      "created_at": "2025-04-22T22:41:35.463459",
+      "updated_at": "2025-04-22T22:41:35.463461"
+    },
+    {
+      "id": "a2b5b218-4141-4dc8-83d6-1625321264a8",
+      "booking_id": "ef836886-e0ca-468f-8631-1330c315dc62",
+      "amount": 910.57,
+      "payment_date": "2025-04-22T22:41:35.463474",
+      "payment_method": "pix",
+      "status": "failed",
+      "transaction_id": "b4ac8448-8a00-46ee-b79b-972bd6cec204",
+      "created_at": "2025-04-22T22:41:35.463487",
+      "updated_at": "2025-04-22T22:41:35.463489"
+    },
+    {
+      "id": "03c1c442-f4ba-4cb2-9b9f-e4976626b95e",
+      "booking_id": "ba6d5145-c5ba-4bc5-bacb-6d25bce7847e",
+      "amount": 1317.59,
+      "payment_date": "2025-04-22T22:41:35.463504",
+      "payment_method": "pix",
+      "status": "pending",
+      "transaction_id": "0325a878-8810-4f5b-b4b0-23a187972031",
+      "created_at": "2025-04-22T22:41:35.463513",
+      "updated_at": "2025-04-22T22:41:35.463515"
+    }
+  ]
+}

@@ -44,6 +44,7 @@ type Flight = {
   updated_at: Date;
 };
 
+
 type SeatClassType = 'economic' | 'premium' | 'executive';
 
 type SeatClass = {
