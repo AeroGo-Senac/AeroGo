@@ -12,7 +12,8 @@
         margin-bottom: 15px;
         color: #1B0088;
         font-weight: 600;
-    }
+        background-color: #fff;
+}
 
     .btns {
         display: flex;

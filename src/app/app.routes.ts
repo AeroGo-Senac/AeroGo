@@ -5,6 +5,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { DetalhesVooComponent } from './pages/detalhes-voo/detalhes-voo.component';
 import { FlightsComponent } from './pages/flights/flights.component';
 
 export const routes: Routes = [
@@ -13,7 +14,9 @@ export const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'admin', component: AdminComponent },
-  {path: 'flights', component: FlightsComponent},
+  { path: 'flights', component: FlightsComponent },
+  { path: 'flightsdetails', component: DetalhesVooComponent },
   { path: '**', component: NotFoundComponent },
+
 ];
 
