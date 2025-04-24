@@ -8,17 +8,17 @@
 
         <form>
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="seu@email.com" [value]="user.email"
-            (change)="onChangeEmail($event)" />
+          <input id="email" type="email" name="email" placeholder="seu@email.com" [(ngModel)]="user.email"
+            (ngModelChange)="updateDisabledState()" />
           <label for="senha">Senha</label>
-          <input id="senha" type="password" placeholder="••••••••" [value]="user.password"
-            (change)="onChangePassword($event)" />
+          <input id="senha" type="password" name="senha" placeholder="••••••••" [(ngModel)]="user.password"
+            (ngModelChange)="updateDisabledState()" />
 
           <div class="forgot-password">
             <a href="#">Esqueceu sua senha?</a>
           </div>
 
-          <button type="submit" (click)="login()" [disabled]="disabled">
+          <button type="submit" (click)="login()" [disabled]="disabled" [className]="disabled ? 'disabled' : ''">
             <span class="icon">⇨</span> Entrar
           </button>
         </form>

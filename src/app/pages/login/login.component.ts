@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [HeaderComponent, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -18,11 +19,13 @@ export class LoginComponent {
     email: '',
     password: '',
   }
-
-  disabled = false;
-
+  disabled = true;
 
 
+
+  updateDisabledState() {
+    this.disabled = this.user.email.length <= 0 || this.user.password.length <= 0;
+  }
 
   login() {
     this.disabled = true;
@@ -49,16 +52,6 @@ export class LoginComponent {
       }
 
     );
-  }
-
-  onChangeEmail(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.user.email = input.value;
-  }
-
-  onChangePassword(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.user.password = input.value;
   }
 
 }

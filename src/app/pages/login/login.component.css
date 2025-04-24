@@ -87,10 +87,6 @@ button {
   gap: 0.4rem;
 }
 
-button:hover {
-  background-color: #2d0d9c;
-}
-
 .icon {
   font-size: 1.1rem;
 }
@@ -122,4 +118,9 @@ code {
   padding: 2px 6px;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
+}
+
+.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
