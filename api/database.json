@@ -2,9 +2,9 @@
   "users": [
     {
       "id": "831b5334-e62f-4470-acaa-d02edc6e9100",
-      "email": "alice@example.com",
-      "name": "Alice Johnson",
-      "password_hash": "hashed_password_1",
+      "email": "edu@edu.com",
+      "name": "Eduardo",
+      "password_hash": "123456",
       "is_admin": true,
       "created_at": "2025-04-22T22:41:14.195474",
       "updated_at": "2025-04-22T22:41:14.195493"

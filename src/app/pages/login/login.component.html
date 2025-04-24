@@ -8,16 +8,17 @@
 
         <form>
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="seu@email.com" />
-
+          <input id="email" type="email" placeholder="seu@email.com" [value]="user.email"
+            (change)="onChangeEmail($event)" />
           <label for="senha">Senha</label>
-          <input id="senha" type="password" placeholder="••••••••" />
+          <input id="senha" type="password" placeholder="••••••••" [value]="user.password"
+            (change)="onChangePassword($event)" />
 
           <div class="forgot-password">
             <a href="#">Esqueceu sua senha?</a>
           </div>
 
-          <button type="submit">
+          <button type="submit" (click)="login()" [disabled]="disabled">
             <span class="icon">⇨</span> Entrar
           </button>
         </form>
