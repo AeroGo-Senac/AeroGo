@@ -8,9 +8,12 @@
             <span [class]="!modoFormulario ? 'tabs' : 'tab'" (click)="mostrarLista()">Ver Voos</span>
         </div>
     </div>
-    @if (modoFormulario) {
-    <app-adminform></app-adminform>
-    } @else {
-    <app-adminlist></app-adminlist>
-    }
+    <div class="container-admin">
+        @if (modoFormulario) {
+        <app-adminform [flightIsEditing]="flighToEdit"></app-adminform>
+        } @else {
+        <app-adminlist [flights]="flights"></app-adminlist>
+        }
+    </div>
+
 </div>

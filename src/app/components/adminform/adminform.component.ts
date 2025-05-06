@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
+import { Component, Input } from '@angular/core';
+import type { Flight, FlightComplete } from '../../../types';
 
 @Component({
   selector: 'app-adminform',
@@ -7,5 +7,9 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './adminform.component.css'
 })
 export class AdmformComponent {
+  flight: Flight = {} as FlightComplete;
+  @Input() flightIsEditing: FlightComplete = {} as FlightComplete;
+
+  isEditing: boolean = false;
 
 }

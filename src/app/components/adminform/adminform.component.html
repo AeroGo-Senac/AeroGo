@@ -1,75 +1,317 @@
-<div class="form-container">
-    <h2>Cadastrar Novo Voo</h2>
-    <form class="form-grid">
+<!-- cadastro-voo.component.html -->
+<div class="container" [className]="isEditing ? 'isEditing container ' : 'container'">
+
+    @if(flightIsEditing.flight_number) {
+    <div class="box-title">
+        <h1 class="title">{{isEditing ? "Editando Voo" : "Visualizando Voo"}}: {{ flightIsEditing.flight_number }}</h1>
+        @if(!isEditing){
+        <button (click)="isEditing = !isEditing" class="edit-button"> <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-pencil-icon lucide-pencil">
+                <path
+                    d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+                <path d="m15 5 4 4" />
+            </svg> Editar Perfil</button>
+        } @else {
+        <button (click)="isEditing = !isEditing" class="save-button"> <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-save-icon lucide-save">
+                <path d="M19 21H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2z" />
+                <path d="M17.5 3.5v4h-11v-4h11z" />
+            </svg> Salvar</button>
+        }
+    </div>
+    <div class="form-grid">
         <div>
-            <label>Número do Voo</label>
-            <input type="text" value="LA1234">
+            <label for="numeroVoo">Número do Voo</label>
+            <input id="numeroVoo" name="numeroVoo" placeholder="LA1234" [value]="flightIsEditing.flight_number"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
         </div>
         <div>
-            <label>Aeronave</label>
-            <select>
-                <option>Selecione a aeronave</option>
-                <option>A320</option>
-                <option>B737</option>
-                <option>Embraer 190</option>
-                <option>Airbus A350</option>
-                <option>Boeing 787</option>
+            <label for="aeronave">Aeronave</label>
+            <select id="aeronave" name="aeronave" [disabled]="!isEditing" [className]="!isEditing && 'disabled'">
+                <option disabled selected>Selecione a aeronave</option>
+                @for (aircraft of flightIsEditing.aircraft; track aircraft.id) {
+                <option [value]="aircraft.id" [selected]="aircraft.id == flightIsEditing.aircraft[0].id">
+                    {{ aircraft.model }}
+                </option>
+                }
+            </select>
+        </div>
+
+        <div>
+            <label for="origem">Origem</label>
+            <input id="origem" name="origem" placeholder="São Paulo (GRU)"
+                [value]="flightIsEditing.origin_airport[0].name + ' ' + flightIsEditing.origin_airport[0].code"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+        </div>
+        <div>
+            <label for="destino">Destino</label>
+            <input id="destino" name="destino" placeholder="Rio de Janeiro (SDU)" [disabled]="!isEditing"
+                [className]="!isEditing && 'disabled'"
+                [value]="flightIsEditing.destination_airport[0].name + ' - ' +flightIsEditing.destination_airport[0].code " />
+        </div>
+
+        <div>
+            <label for="dataPartida">Data de Partida</label>
+            <input type="date" id="dataPartida" name="dataPartida" [value]="flightIsEditing.departure_date"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+        </div>
+        <div>
+            <label for="horaPartida">Hora de Partida</label>
+            <input type="time" id="horaPartida" name="horaPartida" [value]="flightIsEditing.departure_time"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+        </div>
+        <div>
+            <label for="dataChegada">Data de Chegada</label>
+            <input type="date" id="dataChegada" name="dataChegada" [value]="flightIsEditing.arrival_date"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+        </div>
+        <div>
+            <label for="horaChegada">Hora de Chegada</label>
+            <input type="time" id="horaChegada" name="horaChegada" [value]="flightIsEditing.arrival_time"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+        </div>
+    </div>
+
+    <h3 class="subtitle">Classes de Assentos</h3>
+    @for (class of flightIsEditing.seat_classes; track $index) {
+    <div class="form-grid form-grid-assentos">
+        <div>
+            <label for="tipoClasse">Tipo</label>
+            <select id="tipoClasse" name="tipoClasse" [disabled]="!isEditing" [className]="!isEditing && 'disabled'">
+                <option [selected]="class.type == 'executive'">Executiva</option>
+                <option [selected]="class.type == 'economic'">Econômica</option>
+                <option [selected]="class.type == 'premium'"> Premium </option>
             </select>
         </div>
         <div>
-            <label>Origem</label>
-            <input type="text" value="São Paulo (GRU)">
+            <label for="assentosDisponiveis">Assentos Disponíveis</label>
+            <input id="assentosDisponiveis" name="assentosDisponiveis" type="number" [value]="class.available_seats"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
         </div>
         <div>
-            <label>Destino</label>
-            <input type="text" value="Rio de Janeiro (SDU)">
+            <label for="precoClasse">Preço (R$)</label>
+            <input id="precoClasse" name="precoClasse" type="number" [value]="class.price" [disabled]="!isEditing"
+                [className]="!isEditing && 'disabled'" />
         </div>
-        <div class="date-time-group">
-            <div>
-                <label>Data de Partida</label>
-                <input type="date">
-            </div>
-            <div>
-                <label>Hora de Partida</label>
-                <input type="time">
-            </div>
+        @if(isEditing) {
+        <div class="remove-button-wrapper">
+            <button class="remove-button" title="Remover Classe">🗑</button>
         </div>
-        <div class="date-time-group">
-            <div>
-                <label>Data de Chegada</label>
-                <input type="date">
-            </div>
-            <div>
-                <label>Hora de Chegada</label>
-                <input type="time">
-            </div>
-        </div>
-        <div class="full-width">
-            <h3>Classes de Assentos</h3>
+
+        }
+
+    </div>
+    }
+
+    @if(isEditing) {
+    <button class="add-button">+ Adicionar Classe</button>
+    }
+    <h3 class="subtitle">Pacotes Adicionais</h3>
+
+    @for (package of flightIsEditing.packages; track $index) {
+    <div class="form-grid form-grid-pacotes">
+        <div>
+            <label for="nomePacote">Nome do Pacote</label>
+            <input id="nomePacote" name="nomePacote" placeholder="Bagagem Extra" [value]="package.name"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
         </div>
         <div>
-            <label>Tipo</label>
-            <input type="text" value="Econômica">
+            <label for="descricaoPacote">Descrição</label>
+            <input id="descricaoPacote" name="descricaoPacote" placeholder="Descrição do pacote"
+                [value]="package.description" [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
         </div>
         <div>
-            <label>Assentos Disponíveis</label>
-            <input type="number">
+            <label for="precoPacote">Preço (R$)</label>
+            <input id="precoPacote" name="precoPacote" type="number" [value]="package.price" [disabled]="!isEditing"
+                [className]="!isEditing && 'disabled'" />
+        </div>
+        @if(isEditing) {
+        <div class="remove-button-wrapper">
+            <button class="remove-button" title="Remover Classe">🗑</button>
+        </div>
+        }
+    </div>
+    }
+    @if(isEditing) {
+    <button class="add-button">+ Adicionar Pacote</button>
+    }
+    <div class="actions">
+        <button class="submit-button">Cadastrar Voo</button>
+    </div>
+
+    } @else {
+    <h1 class="title">Novo Voo</h1>
+    <div class="form-grid">
+        <div>
+            <label for="numeroVoo">Número do Voo</label>
+            <input id="numeroVoo" name="numeroVoo" placeholder="LA1234" />
         </div>
         <div>
-            <label>Preço (R$)</label>
-            <input type="number">
+            <label for="aeronave">Aeronave</label>
+            <select id="aeronave" name="aeronave">
+                <option disabled selected>Selecione a aeronave</option>
+            </select>
         </div>
-        <div class="full-width">
-            <button class="btn secondary">Adicionar Classe</button>
+
+        <div>
+            <label for="origem">Origem</label>
+            <input id="origem" name="origem" placeholder="São Paulo (GRU)" />
         </div>
-        <div class="full-width">
-            <h3>Pacotes Adicionais</h3>
+        <div>
+            <label for="destino">Destino</label>
+            <input id="destino" name="destino" placeholder="Rio de Janeiro (SDU)" />
         </div>
-        <div class="full-width">
-            <button class="btn secondary">Adicionar Pacote</button>
+
+        <div>
+            <label for="dataPartida">Data de Partida</label>
+            <input type="date" id="dataPartida" name="dataPartida" />
         </div>
-        <div class="full-width">
-            <button class="btn primary">Cadastrar Voo</button>
+        <div>
+            <label for="horaPartida">Hora de Partida</label>
+            <input type="time" id="horaPartida" name="horaPartida" />
         </div>
-    </form>
+        <div>
+            <label for="dataChegada">Data de Chegada</label>
+            <input type="date" id="dataChegada" name="dataChegada" />
+        </div>
+        <div>
+            <label for="horaChegada">Hora de Chegada</label>
+            <input type="time" id="horaChegada" name="horaChegada" />
+        </div>
+    </div>
+
+    <h3 class="subtitle">Classes de Assentos</h3>
+    <div class="form-grid form-grid-assentos">
+        <div>
+            <label for="tipoClasse">Tipo</label>
+            <select id="tipoClasse" name="tipoClasse">
+                <option>Executiva</option>
+                <option>Econômica</option>
+            </select>
+        </div>
+        <div>
+            <label for="assentosDisponiveis">Assentos Disponíveis</label>
+            <input id="assentosDisponiveis" name="assentosDisponiveis" type="number" />
+        </div>
+        <div>
+            <label for="precoClasse">Preço (R$)</label>
+            <input id="precoClasse" name="precoClasse" type="number" />
+        </div>
+        <div class="remove-button-wrapper">
+            <button class="remove-button" title="Remover Classe">🗑</button>
+        </div>
+    </div>
+    <button class="add-button">+ Adicionar Classe</button>
+
+    <h3 class="subtitle">Pacotes Adicionais</h3>
+    <div class="form-grid form-grid-pacotes">
+        <div>
+            <label for="nomePacote">Nome do Pacote</label>
+            <input id="nomePacote" name="nomePacote" placeholder="Bagagem Extra" />
+        </div>
+        <div>
+            <label for="descricaoPacote">Descrição</label>
+            <input id="descricaoPacote" name="descricaoPacote" placeholder="Descrição do pacote" />
+        </div>
+        <div>
+            <label for="precoPacote">Preço (R$)</label>
+            <input id="precoPacote" name="precoPacote" type="number" />
+        </div>
+        <div class="remove-button-wrapper">
+            <button class="remove-button" title="Remover Pacote">🗑</button>
+        </div>
+    </div>
+    <button class="add-button">+ Adicionar Pacote</button>
+
+    <div class="actions">
+        <button class="submit-button">Cadastrar Voo</button>
+    </div>
+    }
+    <!-- <div class="form-grid">
+        <div>
+            <label for="numeroVoo">Número do Voo</label>
+            <input id="numeroVoo" name="numeroVoo" placeholder="LA1234" />
+        </div>
+        <div>
+            <label for="aeronave">Aeronave</label>
+            <select id="aeronave" name="aeronave">
+                <option disabled selected>Selecione a aeronave</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="origem">Origem</label>
+            <input id="origem" name="origem" placeholder="São Paulo (GRU)" />
+        </div>
+        <div>
+            <label for="destino">Destino</label>
+            <input id="destino" name="destino" placeholder="Rio de Janeiro (SDU)" />
+        </div>
+
+        <div>
+            <label for="dataPartida">Data de Partida</label>
+            <input type="date" id="dataPartida" name="dataPartida" />
+        </div>
+        <div>
+            <label for="horaPartida">Hora de Partida</label>
+            <input type="time" id="horaPartida" name="horaPartida" />
+        </div>
+        <div>
+            <label for="dataChegada">Data de Chegada</label>
+            <input type="date" id="dataChegada" name="dataChegada" />
+        </div>
+        <div>
+            <label for="horaChegada">Hora de Chegada</label>
+            <input type="time" id="horaChegada" name="horaChegada" />
+        </div>
+    </div>
+
+    <h3 class="subtitle">Classes de Assentos</h3>
+    <div class="form-grid form-grid-assentos">
+        <div>
+            <label for="tipoClasse">Tipo</label>
+            <select id="tipoClasse" name="tipoClasse">
+                <option>Executiva</option>
+                <option>Econômica</option>
+            </select>
+        </div>
+        <div>
+            <label for="assentosDisponiveis">Assentos Disponíveis</label>
+            <input id="assentosDisponiveis" name="assentosDisponiveis" type="number" />
+        </div>
+        <div>
+            <label for="precoClasse">Preço (R$)</label>
+            <input id="precoClasse" name="precoClasse" type="number" />
+        </div>
+        <div class="remove-button-wrapper">
+            <button class="remove-button" title="Remover Classe">🗑</button>
+        </div>
+    </div>
+    <button class="add-button">+ Adicionar Classe</button>
+
+    <h3 class="subtitle">Pacotes Adicionais</h3>
+    <div class="form-grid form-grid-pacotes">
+        <div>
+            <label for="nomePacote">Nome do Pacote</label>
+            <input id="nomePacote" name="nomePacote" placeholder="Bagagem Extra" />
+        </div>
+        <div>
+            <label for="descricaoPacote">Descrição</label>
+            <input id="descricaoPacote" name="descricaoPacote" placeholder="Descrição do pacote" />
+        </div>
+        <div>
+            <label for="precoPacote">Preço (R$)</label>
+            <input id="precoPacote" name="precoPacote" type="number" />
+        </div>
+        <div class="remove-button-wrapper">
+            <button class="remove-button" title="Remover Pacote">🗑</button>
+        </div>
+    </div>
+    <button class="add-button">+ Adicionar Pacote</button>
+
+    <div class="actions">
+        <button class="submit-button">Cadastrar Voo</button>
+    </div> -->
 </div>

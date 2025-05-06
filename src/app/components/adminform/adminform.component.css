@@ -1,88 +1,170 @@
-.text {
-    color: #0a0a52;
+.container {
+    margin: 2rem auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 2rem;
+    font-family: "Segoe UI", sans-serif;
+    color: #111827;
+    transition: all 1s ease;
+
 }
 
-.buttons {
-    margin-bottom: 20px;
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
-.btn {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.btn.primary {
-    background-color: #f23c97;
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #ff007f;
-    color: white;
-}
-
-.btn.secondary {
-    background-color: #ddd;
-    color: black;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.form-container {
-    background: #fff;
-    padding: 20px;
-    max-width: 92%;
-    margin: auto;
-    color: #000;
-    border-radius: 1em;
-    border: solid 1px #E2E8F0;
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 2rem 0 1rem;
 }
 
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.full-width {
-    grid-column: span 2;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+.form-grid-assentos,
+.form-grid-pacotes {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 input,
 select {
     width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
 }
 
-h3 {
-    margin-top: 20px;
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-.date-time-group {
+.add-button,
+.submit-button {
+    background-color: #ec4899;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.add-button {
+    background-color: transparent;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.add-button:hover {
+    background-color: #e5e7eb;
+}
+
+.submit-button:hover {
+    background-color: #db2777;
+}
+
+.remove-button {
+    background-color: #f87171;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.remove-button:hover {
+    background-color: #dc2626;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.remove-button-wrapper {
+    display: flex;
+    align-items: end;
+}
+
+.remove-button {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.box-title {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.date-time-group>div {
-    width: 100%;
+.edit-button {
+    display: flex;
+    gap: 7px;
+    background: #ffffff24;
+    border: solid 1px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.save-button {
+    display: flex;
+    gap: 7px;
+    background: #1B0088;
+    color: #fff;
+    border: solid 1px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.isEditing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #fff;
+    }
+
+    50% {
+        background-color: #f0b40050;
+    }
+
+    100% {
+        background-color: #fff;
+    }
 }

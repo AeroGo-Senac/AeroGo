@@ -30,19 +30,6 @@ type Aircraft = {
   updated_at: Date;
 };
 
-type Flight = {
-  id: UUID;
-  flight_number: string;
-  origin_airport_id: UUID;
-  destination_airport_id: UUID;
-  departure_date: string;
-  departure_time: string;
-  arrival_date: string;
-  arrival_time: string;
-  aircraft_id: UUID;
-  created_at: Date;
-  updated_at: Date;
-};
 
 
 type SeatClassType = 'economic' | 'premium' | 'executive';
@@ -102,4 +89,27 @@ type Payment = {
   updated_at: Date;
 };
 
-export type { Payment, BookingPackage, Booking, Package, SeatClass, Flight, Aircraft, Airport, User, SeatClassType };
+
+type Flight = {
+  id: UUID;
+  flight_number: string;
+  origin_airport_id: UUID;
+  destination_airport_id: UUID;
+  departure_date: string;
+  departure_time: string;
+  arrival_date: string;
+  arrival_time: string;
+  aircraft_id: UUID;
+  created_at: Date;
+  updated_at: Date;
+};
+
+interface FlightComplete extends Flight {
+  origin_airport: Airport[];
+  destination_airport: Airport[];
+  aircraft: Aircraft[];
+  seat_classes: SeatClass[];
+  packages: Package[];
+}
+
+export type { Payment, BookingPackage, Booking, Package, SeatClass, Flight, Aircraft, Airport, User, SeatClassType, FlightComplete, BookingStatus, PaymentStatus };
