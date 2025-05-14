@@ -5,6 +5,7 @@ import { AdmformComponent } from "../../components/adminform/adminform.component
 import { FlightService } from '../../core/services/flights.service';
 import type { FlightComplete } from '../../../types';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AirportService } from '../../core/services/airport.service';
 
 @Component({
   standalone: true,
@@ -15,13 +16,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AdminComponent {
 
-  constructor(private flighService: FlightService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private flighService: FlightService, private route: ActivatedRoute, private router: Router, private airportService: AirportService) { }
   flights: FlightComplete[] = [];
   flighToEdit: FlightComplete = {} as FlightComplete;
-
+  airports: { id: string, text: string }[] = [];
   ngOnInit() {
     this.flighService.getAllFlights().subscribe((flights) => {
       this.flights = flights;
+    });
+
+    this.airportService.getBaseAirports().subscribe((airports) => {
+      console.log(airports);
+      this.airports = airports.map(airport => ({ id: airport.id, text: airport.text }));
     });
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {

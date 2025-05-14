@@ -314,4 +314,15 @@
     <div class="actions">
         <button class="submit-button">Cadastrar Voo</button>
     </div> -->
+
+    <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports">
+        <input #autocompleteInput id="origem" name="origem" placeholder="São Paulo (GRU)"
+            [value]="flightIsEditing?.origin_airport?.[0]?.name + ' ' + flightIsEditing?.origin_airport?.[0]?.code"
+            [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+    </app-input-autocomplete>
+
+
+
+    <h1>{{ isValidOriginAirport ? 'Valido' : 'Invalido' }}</h1>
+
 </div>

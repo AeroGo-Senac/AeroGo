@@ -17,8 +17,8 @@
             @for (flight of flights; track flight.id) {
             <tr>
                 <td>{{ flight.flight_number }}</td>
-                <td>{{ flight.origin_airport[0]?.city }}</td>
-                <td>{{ flight.destination_airport[0]?.city }}</td>
+                <td>{{ flight.origin_airport[0].city }}</td>
+                <td>{{ flight.destination_airport[0].city }}</td>
                 <td>{{ flight.departure_date }}</td>
                 <td>{{ flight.departure_time }}</td>
                 <td>{{ flight.aircraft[0].model }}</td>
