@@ -20,5 +20,9 @@ export class UserService {
     return this.http.get<any>(`${this.apiUrl}?email=${email}&password_hash=${password}`);
   }
 
+  newUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
+  }
+
 
 }

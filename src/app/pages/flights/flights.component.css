@@ -4,3 +4,94 @@
   min-height: 100vh;
   background-color: white;
 }
+
+li {
+  color: black;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  color: #000000;
+}
+
+th {
+  border-bottom: 1px solid #64748B;
+  color: #64748B;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px;
+  background-color: #f9fafb;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.details-btn,
+.buy-btn {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.details-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  margin-right: 8px;
+}
+
+.details-btn:hover {
+  background-color: #2563eb;
+}
+
+.buy-btn {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.buy-btn:hover {
+  background-color: #059669;
+}

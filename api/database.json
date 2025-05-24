@@ -26,6 +26,11 @@
       "is_admin": false,
       "created_at": "2025-04-22T22:41:14.195711",
       "updated_at": "2025-04-22T22:41:14.195715"
+    },
+    {
+      "id": "79a5",
+      "email": "teste",
+      "name": "teste"
     }
   ],
   "airports": [
@@ -41,8 +46,8 @@
     {
       "id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
       "code": "GRU",
-      "name": "S\u00e3o Paulo/Guarulhos International Airport",
-      "city": "S\u00e3o Paulo",
+      "name": "São Paulo/Guarulhos International Airport",
+      "city": "São Paulo",
       "country": "Brazil",
       "created_at": "2025-04-22T22:41:14.196161",
       "updated_at": "2025-04-22T22:41:14.196165"
@@ -234,7 +239,7 @@
       "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "name": "Package 1",
       "description": "Package 1 description for flight BA202",
-      "price": 233.0,
+      "price": 233,
       "created_at": "2025-04-22T22:41:35.462510",
       "updated_at": "2025-04-22T22:41:35.462512"
     },
@@ -380,37 +385,44 @@
     {
       "booking_id": "54daca4c-07aa-454f-b511-07013d2910e6",
       "package_id": "d9deeb13-c462-4759-8696-6713549cddc1",
-      "created_at": "2025-04-22T22:41:35.463115"
+      "created_at": "2025-04-22T22:41:35.463115",
+      "id": "132b"
     },
     {
       "booking_id": "2c96a74d-8381-4328-a737-5360abbb0be8",
       "package_id": "ab4fe6b4-2216-480d-a10b-a0d6b36538d6",
-      "created_at": "2025-04-22T22:41:35.463124"
+      "created_at": "2025-04-22T22:41:35.463124",
+      "id": "c924"
     },
     {
       "booking_id": "789e29ff-6ad2-47a8-8479-9faaad5fc413",
       "package_id": "7c75b249-41d8-41ef-9087-d87041667650",
-      "created_at": "2025-04-22T22:41:35.463134"
+      "created_at": "2025-04-22T22:41:35.463134",
+      "id": "3de6"
     },
     {
       "booking_id": "c11ac5e1-69e9-45b2-9e30-422da12f4766",
       "package_id": "7dc0cbc4-8f90-4c1d-8963-09a97d07c25b",
-      "created_at": "2025-04-22T22:41:35.463146"
+      "created_at": "2025-04-22T22:41:35.463146",
+      "id": "beb8"
     },
     {
       "booking_id": "c84a6a6c-98fc-4430-978b-91907f6b1e23",
       "package_id": "7c75b249-41d8-41ef-9087-d87041667650",
-      "created_at": "2025-04-22T22:41:35.463151"
+      "created_at": "2025-04-22T22:41:35.463151",
+      "id": "e21e"
     },
     {
       "booking_id": "c84a6a6c-98fc-4430-978b-91907f6b1e23",
       "package_id": "5185459f-8859-44a6-9138-4fbc1d38343a",
-      "created_at": "2025-04-22T22:41:35.463153"
+      "created_at": "2025-04-22T22:41:35.463153",
+      "id": "4fbd"
     },
     {
       "booking_id": "ba6d5145-c5ba-4bc5-bacb-6d25bce7847e",
       "package_id": "7c75b249-41d8-41ef-9087-d87041667650",
-      "created_at": "2025-04-22T22:41:35.463161"
+      "created_at": "2025-04-22T22:41:35.463161",
+      "id": "1f8a"
     }
   ],
   "payments": [

@@ -112,4 +112,10 @@ interface FlightComplete extends Flight {
   packages: Package[];
 }
 
-export type { Payment, BookingPackage, Booking, Package, SeatClass, Flight, Aircraft, Airport, User, SeatClassType, FlightComplete, BookingStatus, PaymentStatus };
+interface Item {
+  id: string;
+  name: string;
+  price: number;
+}
+
+export type { Payment, BookingPackage, Booking, Package, SeatClass, Flight, Aircraft, Airport, User, SeatClassType, FlightComplete, BookingStatus, PaymentStatus, Item };

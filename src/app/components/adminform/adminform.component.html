@@ -41,9 +41,11 @@
 
         <div>
             <label for="origem">Origem</label>
-            <input id="origem" name="origem" placeholder="São Paulo (GRU)"
-                [value]="flightIsEditing.origin_airport[0].name + ' ' + flightIsEditing.origin_airport[0].code"
-                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+            <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports">
+                <input #autocompleteInput id="origem" name="origem" placeholder="São Paulo (GRU)"
+                    [value]="flightIsEditing?.origin_airport?.[0]?.name + ' ' + flightIsEditing?.origin_airport?.[0]?.code"
+                    [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
+            </app-input-autocomplete>
         </div>
         <div>
             <label for="destino">Destino</label>
@@ -146,49 +148,63 @@
     <div class="form-grid">
         <div>
             <label for="numeroVoo">Número do Voo</label>
-            <input id="numeroVoo" name="numeroVoo" placeholder="LA1234" />
+            <input id="numeroVoo" name="numeroVoo" placeholder="LA1234" [(ngModel)]="newFlight.flight_number" />
         </div>
         <div>
             <label for="aeronave">Aeronave</label>
-            <select id="aeronave" name="aeronave">
-                <option disabled selected>Selecione a aeronave</option>
+            <select id="aeronave" name="aeronave" [(ngModel)]="newFlight.aircraft_id">
+                <option selected>Selecione a aeronave</option>
+                @for (aircraft of aircrafts; track aircraft.id) {
+                <option [value]="aircraft.id">
+                    {{ aircraft.text }}
+                </option>
+                }
             </select>
         </div>
 
         <div>
             <label for="origem">Origem</label>
-            <input id="origem" name="origem" placeholder="São Paulo (GRU)" />
+            <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports">
+                <input #autocompleteInput id="origem" name="origem" placeholder="São Paulo (GRU)"
+                    [value]="newFlight?.origin_airport?.[0]?.name + ' ' + newFlight?.origin_airport?.[0]?.code" />
+            </app-input-autocomplete>
         </div>
         <div>
             <label for="destino">Destino</label>
-            <input id="destino" name="destino" placeholder="Rio de Janeiro (SDU)" />
+
+            <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports">
+                <input #autocompleteInput id="destino" name="destino" placeholder="Rio de Janeiro (SDU)"
+                    [value]="newFlight?.origin_airport?.[0]?.name + ' ' + newFlight?.origin_airport?.[0]?.code" />
+            </app-input-autocomplete>
         </div>
 
         <div>
             <label for="dataPartida">Data de Partida</label>
-            <input type="date" id="dataPartida" name="dataPartida" />
+            <input type="date" id="dataPartida" name="dataPartida" [value]="newFlight.departure_date" />
         </div>
         <div>
             <label for="horaPartida">Hora de Partida</label>
-            <input type="time" id="horaPartida" name="horaPartida" />
+            <input type="time" id="horaPartida" name="horaPartida" [value]="newFlight.departure_time" />
         </div>
         <div>
             <label for="dataChegada">Data de Chegada</label>
-            <input type="date" id="dataChegada" name="dataChegada" />
+            <input type="date" id="dataChegada" name="dataChegada" [value]="newFlight.arrival_date" />
         </div>
         <div>
             <label for="horaChegada">Hora de Chegada</label>
-            <input type="time" id="horaChegada" name="horaChegada" />
+            <input type="time" id="horaChegada" name="horaChegada" [value]="newFlight.arrival_time" />
         </div>
     </div>
 
     <h3 class="subtitle">Classes de Assentos</h3>
+    @for(class of newFlight.seat_classes; track newFlight.seat_classes) {
     <div class="form-grid form-grid-assentos">
         <div>
             <label for="tipoClasse">Tipo</label>
             <select id="tipoClasse" name="tipoClasse">
-                <option>Executiva</option>
-                <option>Econômica</option>
+                @for (type of ['economic', 'premium', 'executive']; track $index) {
+                <option [value]="type">{{ type }}</option>
+                }
             </select>
         </div>
         <div>
@@ -203,6 +219,7 @@
             <button class="remove-button" title="Remover Classe">🗑</button>
         </div>
     </div>
+    }
     <button class="add-button">+ Adicionar Classe</button>
 
     <h3 class="subtitle">Pacotes Adicionais</h3>
@@ -226,7 +243,7 @@
     <button class="add-button">+ Adicionar Pacote</button>
 
     <div class="actions">
-        <button class="submit-button">Cadastrar Voo</button>
+        <button class="submit-button" (click)="onSubmit()">Cadastrar Voo</button>
     </div>
     }
     <!-- <div class="form-grid">

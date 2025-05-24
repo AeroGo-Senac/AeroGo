@@ -10,7 +10,7 @@
     </div>
     <div class="container-admin">
         @if (modoFormulario) {
-        <app-adminform [airports]="airports" [flightIsEditing]="flighToEdit"></app-adminform>
+        <app-adminform [airports]="airports" [flightIsEditing]="flighToEdit" [aircrafts]="aircrafts"></app-adminform>
         } @else {
         <app-adminlist [flights]="flights"></app-adminlist>
         }

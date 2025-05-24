@@ -58,8 +58,11 @@ export class InputAutocompleteComponent implements AfterViewInit {
 
   filterStrings() {
     const value = this.stringControl.value.toLowerCase();
+    const normalize = (str: string) =>
+      str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
     this.filteredStrings = this.strings.filter(item =>
-      item.text.toLowerCase().includes(value)
+      normalize(item.text.toLowerCase()).includes(normalize(value))
     );
 
     const isValid = this.strings.some(item => item.text === this.stringControl.value);

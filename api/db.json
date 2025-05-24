@@ -1,0 +1,74 @@
+{
+  "itens": [
+    {
+      "id": 1,
+      "name": "Nike Air Max 270",
+      "price": 150
+    },
+    {
+      "id": 2,
+      "name": "Adidas Ultraboost",
+      "price": 180
+    },
+    {
+      "id": 3,
+      "name": "Puma RS-X",
+      "price": 120
+    },
+    {
+      "id": 4,
+      "name": "Reebok Classic",
+      "price": 100
+    },
+    {
+      "id": 5,
+      "name": "New Balance 574",
+      "price": 110
+    },
+    {
+      "id": 6,
+      "name": "Asics Gel-Lyte III",
+      "price": 130
+    }
+  ],
+  "carrinho": [
+    {
+      "id": 1,
+      "id_user": 1,
+      "name": "Nike Air Max 270",
+      "price": 150
+    },
+    {
+      "id": 2,
+      "id_user": 1,
+      "name": "Adidas Ultraboost",
+      "price": 180
+    },
+    {
+      "id": 3,
+      "id_user": 2,
+      "name": "Puma RS-X",
+      "price": 120
+    },
+    {
+      "id": 4,
+      "id_user": 2,
+      "name": "Reebok Classic",
+      "price": 100
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "",
+      "password": "abcdef"
+    }
+  ]
+}

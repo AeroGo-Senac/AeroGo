@@ -6,6 +6,7 @@ import { FlightService } from '../../core/services/flights.service';
 import type { FlightComplete } from '../../../types';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AirportService } from '../../core/services/airport.service';
+import { AircraftService } from '../../core/services/aircraft.service';
 
 @Component({
   standalone: true,
@@ -16,18 +17,24 @@ import { AirportService } from '../../core/services/airport.service';
 })
 export class AdminComponent {
 
-  constructor(private flighService: FlightService, private route: ActivatedRoute, private router: Router, private airportService: AirportService) { }
+  constructor(private flighService: FlightService, private route: ActivatedRoute, private router: Router, private airportService: AirportService, private aircraftService: AircraftService) { }
   flights: FlightComplete[] = [];
   flighToEdit: FlightComplete = {} as FlightComplete;
   airports: { id: string, text: string }[] = [];
+  aircrafts: { id: string, text: string }[] = [];
   ngOnInit() {
     this.flighService.getAllFlights().subscribe((flights) => {
       this.flights = flights;
     });
 
+    this.aircraftService.getAllAircraft().subscribe((aircrafts) => {
+      this.aircrafts = aircrafts;
+      console.log(this.aircrafts);
+    });
+
     this.airportService.getBaseAirports().subscribe((airports) => {
-      console.log(airports);
-      this.airports = airports.map(airport => ({ id: airport.id, text: airport.text }));
+      this.airports = airports;
+      console.log(this.airports);
     });
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
