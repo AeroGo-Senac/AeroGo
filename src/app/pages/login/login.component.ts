@@ -19,6 +19,7 @@ export class LoginComponent {
     email: '',
     password: '',
   }
+  message = '';
   disabled = true;
 
 
@@ -30,7 +31,7 @@ export class LoginComponent {
   login() {
     this.disabled = true;
     if (!this.user.email || !this.user.password) {
-      alert('Por favor, preencha todos os campos.');
+      this.message = 'Por favor, preencha todos os campos.';
       this.disabled = false;
       return;
     }
@@ -41,7 +42,7 @@ export class LoginComponent {
           const user: User = response[0];
           alert(`Bem-vindo, ${user.name}!`);
         } else {
-          alert('Email ou senha inválidos');
+          this.message = 'Email ou senha inválidos';
         }
       },
       (error) => {

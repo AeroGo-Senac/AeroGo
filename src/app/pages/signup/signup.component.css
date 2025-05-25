@@ -9,6 +9,7 @@ main {
   padding: 0rem 1rem;
   min-height: 100vh;
   font-family: 'Segoe UI', Inter, sans-serif;
+  margin-bottom: 20px;
 }
 
 .login-card {

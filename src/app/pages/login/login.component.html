@@ -18,6 +18,8 @@
             <a href="#">Esqueceu sua senha?</a>
           </div>
 
+          <p style="color: red;">{{message}}</p>
+
           <button type="submit" (click)="login()" [disabled]="disabled" [className]="disabled ? 'disabled' : ''">
             <span class="icon">⇨</span> Entrar
           </button>
