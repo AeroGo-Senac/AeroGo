@@ -28,9 +28,13 @@
       "updated_at": "2025-04-22T22:41:14.195715"
     },
     {
-      "id": "79a5",
-      "email": "teste",
-      "name": "teste"
+      "id": "b0347596-f4cc-43aa-bd44-4ed62d056944",
+      "name": "Eduardo Mendes",
+      "email": "edu@edu.com",
+      "password_hash": "1234",
+      "is_admin": false,
+      "created_at": "2025-05-25T17:33:35.363Z",
+      "updated_at": "2025-05-25T17:33:35.363Z"
     }
   ],
   "airports": [
