@@ -5,9 +5,9 @@
   border: solid 1px #E5E7EB;
   margin: 1em;
   padding: 1em;
+  width: 100%;
   border-radius: 8px;
-  max-width: 1000px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.1s;
 }
 
 .container:hover {
@@ -26,6 +26,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0.7em;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
 }
 
 .box-two {
@@ -33,6 +37,45 @@
   flex-direction: column;
   margin-top: 1em;
   gap: 0.7em;
+
+}
+
+.box-three {
+  width: 20%;
+
+}
+
+.price {
+  color: #1b0088;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.class {
+  color: #64748B;
+  font-weight: 500;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.btn {
+  background-color: #1b0088;
+  color: #ffffff;
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #ff0083;
 }
 
 .ori-dest {
@@ -64,24 +107,12 @@
   animation: rotate 1s linear infinite both;
 }
 
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .classes {
-  color: #020817
+  color: #020817;
 }
 
 .class-box {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin: 1em 0;
@@ -92,9 +123,26 @@
   flex-direction: column;
   border: solid 1px #E2E8F0;
   width: auto;
-  padding: 0.5em 4em;
+  padding: 0.5em 7em;
   border-radius: 8px;
   justify-content: center;
   animation: 1s linear infinite;
+  text-align: center;
+  cursor: pointer;
+}
 
+.class-item:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.class-item h1 {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.class-item p {
+  color: #5c636c;
+  font-size: 0.8em;
 }
