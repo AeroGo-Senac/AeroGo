@@ -6,6 +6,7 @@ import { UserService } from '../../core/services/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../../types';
 
+
 @Component({
   selector: 'app-signup',
   imports: [HeaderComponent, CommonModule, FormsModule],
@@ -27,43 +28,34 @@ export class SignupComponent {
   };
   
   confirmPassword = ''; 
-
+  message = '';
   disabled = true;
 
-  updateDisabledState(): void {
-    this.disabled = this.user.name.length <= 0 || 
-                    this.user.email.length <= 0 || 
-                    this.user.password_hash.length <= 0 || 
-                    this.confirmPassword.length <= 0 || 
-                    this.user.password_hash !== this.confirmPassword; 
-  }
+ 
 
   register(): void {
-    this.disabled = true;
 
     if (!this.user.name || !this.user.email || !this.user.password_hash || !this.confirmPassword) {
-      alert('Por favor, preencha todos os campos.');
-      this.disabled = false;
+      this.message = 'Por favor, preencha todos os campos.';
       return;
     }
 
     if (this.user.password_hash !== this.confirmPassword) {
-      alert('As senhas não coincidem. Por favor, digite novamente.');
-      this.disabled = false;
+      this.message ='As senhas não coincidem. Por favor, digite novamente.';
       return;
     }
 
     this.userService.getUserByEmailAndPassword(this.user.email, this.user.password_hash).subscribe(
       (existingUsers) => {
         if (existingUsers.length > 0) {
-          alert('Este e-mail já está cadastrado. Por favor, use outro e-mail.');
-          this.disabled = false;
+          this.message = 'Este e-mail já está cadastrado. Por favor, use outro e-mail.';
+  
         } else {
 
           this.userService.newUser(this.user).subscribe(
             (response) => {
               console.log('Registro bem-sucedido:', response);
-              alert(`Cadastro realizado com sucesso! Bem-vindo, ${response.name}!`);
+              alert (`Cadastro realizado com sucesso! Bem-vindo, ${response.name}!`);
 
               localStorage.setItem('currentUser', JSON.stringify({
                 id: response.id, 
