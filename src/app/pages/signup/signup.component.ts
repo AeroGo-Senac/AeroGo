@@ -26,12 +26,12 @@ export class SignupComponent {
     created_at: new Date(),
     updated_at: new Date()
   };
-  
-  confirmPassword = ''; 
+
+  confirmPassword = '';
   message = '';
   disabled = true;
 
- 
+
 
   register(): void {
 
@@ -41,24 +41,24 @@ export class SignupComponent {
     }
 
     if (this.user.password_hash !== this.confirmPassword) {
-      this.message ='As senhas não coincidem. Por favor, digite novamente.';
+      this.message = 'As senhas não coincidem. Por favor, digite novamente.';
       return;
     }
 
-    this.userService.getUserByEmailAndPassword(this.user.email, this.user.password_hash).subscribe(
+    this.userService.getUserByEmail(this.user.email).subscribe(
       (existingUsers) => {
         if (existingUsers.length > 0) {
           this.message = 'Este e-mail já está cadastrado. Por favor, use outro e-mail.';
-  
+
         } else {
 
           this.userService.newUser(this.user).subscribe(
             (response) => {
               console.log('Registro bem-sucedido:', response);
-              alert (`Cadastro realizado com sucesso! Bem-vindo, ${response.name}!`);
+              alert(`Cadastro realizado com sucesso! Bem-vindo, ${response.name}!`);
 
               localStorage.setItem('currentUser', JSON.stringify({
-                id: response.id, 
+                id: response.id,
                 name: response.name,
                 email: response.email
               }));
