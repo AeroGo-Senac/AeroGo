@@ -1,11 +1,100 @@
 <div class="container">
   <app-header></app-header>
   <main>
-    <!-- <ul>
-      @for(itens of itens; track itens) {
-      <li> {{ itens.name + ' - R$' + itens.price}}</li>
-      }
-    </ul> -->
+    <main class="main-content">
+      <div class="container">
+        <section class="search-panel">
+          <div class="search-options">
+            <div class="option-group">
+              <input type="radio" id="ida-volta" name="trip-type" checked>
+              <label for="ida-volta">Ida e volta</label>
+              <input type="radio" id="somente-ida" name="trip-type">
+              <label for="somente-ida">Somente ida</label>
+            </div>
 
-  </main>
-</div>
+            <div class="select-wrapper">
+              <select>
+                <option>Economy</option>
+                <option>Premium Economy</option>
+                <option>Business</option>
+                <option>First Class</option>
+              </select>
+              <select>
+                <option>1 passageiro</option>
+                <option>2 passageiros</option>
+                <option>3 passageiros</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="search-inputs">
+            <div class="input-group">
+              <label for="origem">Origem</label>
+              <input type="text" id="origem" placeholder="De onde você vai partir?">
+            </div>
+            <div class="input-group">
+              <label for="destino">Destino</label>
+              <input type="text" id="destino" placeholder="Para onde você vai?">
+            </div>
+            <div class="input-group">
+              <label for="data-ida">Data de ida</label>
+              <input type="date" id="data-ida" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="input-group">
+              <label for="data-volta">Data de volta</label>
+              <input type="date" id="data-volta" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="search-button">
+            <button >Procurar</button>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="date-picker-scroll">
+          <h4>Escolha sua data</h4>
+          <div class="scroll-arrows">
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          </div>
+          <div class="date-cards">
+            <div class="date-card">
+              <span class="day-of-week">QUA</span>
+              <span class="day-of-month">24/04</span>
+            </div>
+            <div class="date-card">
+              <span class="day-of-week">QUI</span>
+              <span class="day-of-month">25/04</span>
+            </div>
+            <div class="date-card">
+              <span class="day-of-week">SEX</span>
+              <span class="day-of-month">26/04</span>
+            </div>
+            <div class="date-card active">
+              <span class="day-of-week">DOM</span>
+              <span class="day-of-month">27/04</span>
+            </div>
+            <div class="date-card">
+              <span class="day-of-week">SEG</span>
+              <span class="day-of-month">28/04</span>
+            </div>
+            <div class="date-card">
+              <span class="day-of-week">TER</span>
+              <span class="day-of-month">29/04</span>
+            </div>
+            <div class="date-card">
+              <span class="day-of-week">QUA</span>
+              <span class="day-of-month">30/04</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="filter">
+          <app-filter></app-filter>
+          <app-flight-card></app-flight-card>
+        </div>
+
+
+      </div>
+
+    </main>
