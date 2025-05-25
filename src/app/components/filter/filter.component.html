@@ -1,0 +1,54 @@
+<div class="results-layout">
+    <aside class="sidebar-filters">
+        <h4><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path
+                    d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Zm40-308 198-252H282l198 252Zm0 0Z" />
+            </svg> Filtros
+        </h4>
+
+        <div class="filter-group">
+            <h5>Faixa de Preço</h5>
+            <div class="price-range-slider">
+                <span>R$ 0</span>
+                <input type="range" min="0" max="5000" value="2500" class="slider" id="priceRange">
+                <span>R$ 5000</span>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h5>Tipo de Cabine</h5>
+            <div class="checkbox-group">
+                <input type="radio" id="cabine-todas" name="cabine-type" checked>
+                <label for="cabine-todas">Todas</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="radio" id="cabine-economica" name="cabine-type">
+                <label for="cabine-economica">Econômica</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="radio" id="cabine-premium-economy" name="cabine-type">
+                <label for="cabine-premium-economy">Premium Economy</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="radio" id="cabine-executiva" name="cabine-type">
+                <label for="cabine-executiva">Executiva</label>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <h5>Paradas</h5>
+            <div class="checkbox-group">
+                <input type="radio" id="paradas-todas" name="paradas-type" checked>
+                <label for="paradas-todas">Todas</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="radio" id="paradas-direto" name="paradas-type">
+                <label for="paradas-direto">Voo Direto</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="radio" id="paradas-1" name="paradas-type">
+                <label for="paradas-1">1 Parada</label>
+            </div>
+        </div>
+    </aside>
+</div>

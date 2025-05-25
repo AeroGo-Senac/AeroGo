@@ -1,0 +1,121 @@
+.sidebar-filters {
+    background-color: rgb(240 244 248 / var(--tw-bg-opacity, 1));
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar-filters h4 {
+    font-size: 18px;
+    color: #0c0c0c;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-filters h4 i {
+    margin-right: 10px;
+    color: #1b0088;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.filter-group h5 {
+    font-size: 15px;
+    color: #0c0c0c;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.filter-group ul {
+    list-style: none;
+}
+
+.filter-group ul li {
+    font-size: 14px;
+    color: #0c0c0c;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter-group ul li:hover {
+    color: #1b0088;
+}
+
+.price-range-slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-range-slider span {
+    font-size: 13px;
+    color: #0c0c0c;
+}
+
+.price-range-slider input[type="range"] {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.checkbox-group {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="radio"] {
+    margin-right: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+}
+
+.checkbox-group input[type="radio"]:checked {
+    border-color: #1b0088;
+    background-color: #1b0088;
+}
+
+.checkbox-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.checkbox-group label {
+    font-size: 14px;
+    color: #0c0c0c;
+    cursor: pointer;
+}
