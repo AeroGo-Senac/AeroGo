@@ -5,7 +5,7 @@
   @if (showSuggestions && filteredStrings.length > 0) {
   <ul class="suggestions">
     @for (string of filteredStrings; track string) {
-    <li (mousedown)="selectString(string.text)">
+    <li (mousedown)="selectString(string)">
       {{ string.text }}
     </li>
     }

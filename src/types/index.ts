@@ -105,9 +105,9 @@ type Flight = {
 };
 
 interface FlightComplete extends Flight {
-  origin_airport: Airport[];
-  destination_airport: Airport[];
-  aircraft: Aircraft[];
+  origin_airport: Airport;
+  destination_airport: Airport;
+  aircraft: Aircraft;
   seat_classes: SeatClass[];
   packages: Package[];
 }

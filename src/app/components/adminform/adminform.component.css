@@ -79,19 +79,15 @@ label {
 }
 
 .remove-button {
+    margin-top: 2em;
     background-color: #f87171;
     border: none;
     border-radius: 6px;
     font-size: 1rem;
     color: white;
     padding: 0.3rem 0.6rem;
-    height: auto;
-    width: auto;
     cursor: pointer;
     transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 

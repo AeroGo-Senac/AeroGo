@@ -18,7 +18,10 @@ import { FormControl, ReactiveFormsModule, AbstractControl } from '@angular/form
 })
 export class InputAutocompleteComponent implements AfterViewInit {
   @Input() strings: { id: string; text: string }[] = [];
+  @Input() id: string = '';
   @Output() validChange = new EventEmitter<boolean>();
+  @Output() idSelected = new EventEmitter<string>();
+
 
   @ContentChild('autocompleteInput', { static: false }) inputRef!: ElementRef<HTMLInputElement>;
 
@@ -33,8 +36,15 @@ export class InputAutocompleteComponent implements AfterViewInit {
   ngAfterViewInit() {
     const input = this.inputRef.nativeElement;
 
-    // Set initial value
-    input.value = this.stringControl.value;
+    const selectedItem = this.strings.find(item => item.id === this.id);
+    if (selectedItem) {
+      this.stringControl.setValue(selectedItem.text);
+      input.value = selectedItem.text;
+      this.validChange.emit(true);
+    } else {
+      // Set initial value
+      input.value = this.stringControl.value;
+    }
 
     input.addEventListener('input', () => {
       this.stringControl.setValue(input.value);
@@ -73,10 +83,11 @@ export class InputAutocompleteComponent implements AfterViewInit {
     return this.strings.some(item => item.text === control.value) ? null : { invalidString: true };
   }
 
-  selectString(string: string) {
-    this.stringControl.setValue(string);
-    this.inputRef.nativeElement.value = string;
+  selectString(string: { id: string; text: string }) {
+    this.stringControl.setValue(string.text);
+    this.inputRef.nativeElement.value = string.text;
     this.showSuggestions = false;
     this.validChange.emit(true);
+    this.idSelected.emit(string.id);
   }
 }

@@ -24,6 +24,7 @@ export class AdminComponent {
   aircrafts: { id: string, text: string }[] = [];
   ngOnInit() {
     this.flighService.getAllFlights().subscribe((flights) => {
+      console.log(flights);
       this.flights = flights;
     });
 
