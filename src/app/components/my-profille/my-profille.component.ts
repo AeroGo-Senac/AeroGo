@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-my-profille',
@@ -6,48 +7,57 @@ import { Component } from '@angular/core';
   templateUrl: './my-profille.component.html',
   styleUrl: './my-profille.component.css'
 })
-export class MyProfilleComponent {
-  isEditing = false;
-
+export class MyProfilleComponent implements OnInit{
   userProfile = {
-    name: 'João Silva',
-    email: 'joao.silva@email.com',
-    phone: '(11) 98765-4321',
-    birthDate: '14/05/1985',
-    address: 'Av. Paulista, 1000, Apto 123, São Paulo - SP, 01310-100'
+    name: '',
+    email: '',
+    telefone: '',
+    date: '',
+    address: ''
   };
 
-  onChangeName(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.userProfile.name = input.value;
+  isEditing = false;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    const currentUser = localStorage.getItem('currentUser');
+    const userId = currentUser ? JSON.parse(currentUser).id : null;
+
+    if (userId) {
+      this.userService.getUserById(userId).subscribe((user: any) => {
+        this.userProfile = {
+          name: user.name,
+          email: user.email,
+          telefone: user.telefone,
+          date: user.date,
+          address: user.address.street
+        };
+      });
+    }
   }
-
-  onChangeEmail(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.userProfile.email = input.value;
-  }
-
-  onChangePhone(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.userProfile.phone = input.value;
-  }
-
-  onChangeBirthDate(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.userProfile.birthDate = input.value;
-  }
-
-  onChangeAddress(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.userProfile.address = input.value;
-  }
-
-
 
   toggleEdit() {
     this.isEditing = !this.isEditing;
+  }
 
-    if (!this.isEditing) {
-    }
+  onChangeName(event: Event) {
+    this.userProfile.name = (event.target as HTMLInputElement).value;
+  }
+
+  onChangeEmail(event: Event) {
+    this.userProfile.email = (event.target as HTMLInputElement).value;
+  }
+
+  onChangePhone(event: Event) {
+    this.userProfile.telefone = (event.target as HTMLInputElement).value;
+  }
+
+  onChangeBirthDate(event: Event) {
+    this.userProfile.date = (event.target as HTMLInputElement).value;
+  }
+
+  onChangeAddress(event: Event) {
+    this.userProfile.address = (event.target as HTMLInputElement).value;
   }
 }
