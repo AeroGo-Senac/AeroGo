@@ -24,18 +24,63 @@ export class SignupComponent {
     password_hash: '',
     is_admin: false,
     created_at: new Date(),
-    updated_at: new Date()
+    updated_at: new Date(),
+    telefone: '',
+    date: new Date(),
+    address: {
+      cep: '',
+      street: '',
+      number: '',
+      complement: undefined,
+      neighborhood: '',
+      city: '',
+      state: ''
+    }
   };
 
   confirmPassword = '';
   message = '';
   disabled = true;
 
+  buscarEndereco(): void {
+    const cep = this.user.address.cep.replace(/\D/g, '');
+
+    if (cep.length !== 8) {
+      this.message = 'CEP inválido.';
+      return;
+    }
+
+    this.userService.getAddressByCep(cep).subscribe(
+      (data) => {
+        if (data.erro) {
+          this.message = 'CEP não encontrado.';
+          return;
+        }
+
+        this.user.address.street = data.logradouro;
+        this.user.address.neighborhood = data.bairro;
+        this.user.address.city = data.localidade;
+        this.user.address.state = data.uf;
+        this.message = '';
+      },
+      (error) => {
+        this.message = 'Erro ao buscar endereço.';
+        console.error(error);
+      }
+    );
+  }
+
+  formatarEndereco(): string {
+    const addr = this.user.address;
+    if (!addr.street) return '';
+    return `${addr.street}, ${addr.neighborhood} - ${addr.city}/${addr.state}`;
+  }
+
 
 
   register(): void {
 
-    if (!this.user.name || !this.user.email || !this.user.password_hash || !this.confirmPassword) {
+    if (!this.user.name || !this.user.email || !this.user.password_hash || !this.confirmPassword || !this.user.telefone || !this.user.address.cep || !this.user.address.street) {
       this.message = 'Por favor, preencha todos os campos.';
       return;
     }
@@ -57,11 +102,6 @@ export class SignupComponent {
               console.log('Registro bem-sucedido:', response);
               alert(`Cadastro realizado com sucesso! Bem-vindo, ${response.name}!`);
 
-              localStorage.setItem('currentUser', JSON.stringify({
-                id: response.id,
-                name: response.name,
-                email: response.email
-              }));
               console.log('Usuário cadastrado e salvo no localStorage:', response.name);
               this.router.navigate(['/login']);
             },
