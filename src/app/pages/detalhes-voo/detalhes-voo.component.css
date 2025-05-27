@@ -50,7 +50,7 @@ main {
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-
+    transition: all 0.3s ease-in-out;
 
 }
 
@@ -59,13 +59,13 @@ main {
     font-size: 22px;
     font-weight: bold;
     margin-top: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: end;
     line-height: 22px;
 }
 
-.price > span{
+.price>span {
     list-style: none;
     padding: 0;
     color: #4B5563;
@@ -101,4 +101,10 @@ main {
     font-size: 20px;
     font-weight: bold;
 
+}
+
+.class-box:hover {
+    border: solid 1px #1B0088;
+    transform: scale(1.02);
+    cursor: pointer;
 }

@@ -47,3 +47,8 @@ p {
     text-align: center;
     color: #64748B;
 }
+
+.actions {
+    display: flex;
+    gap: 10px;
+}

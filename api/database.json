@@ -115,77 +115,6 @@
   ],
   "flights": [
     {
-      "id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-      "flight_number": "AA101",
-      "origin_airport_id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
-      "destination_airport_id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
-      "departure_date": "2025-04-12",
-      "departure_time": "19:30",
-      "arrival_date": "2025-04-21",
-      "arrival_time": "22:15",
-      "aircraft_id": "3050b36d-eefe-4258-9277-b0de04f91097",
-      "created_at": "2025-04-22T22:41:14.196935",
-      "updated_at": "2025-04-22T22:41:14.196937",
-      "origin_airport": {
-        "id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
-        "code": "JFK",
-        "name": "John F. Kennedy International Airport",
-        "city": "New York",
-        "country": "USA",
-        "created_at": "2025-04-22T22:41:14.195940",
-        "updated_at": "2025-04-22T22:41:14.195948"
-      },
-      "destination_airport": {
-        "id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
-        "code": "GRU",
-        "name": "São Paulo/Guarulhos International Airport",
-        "city": "São Paulo",
-        "country": "Brazil",
-        "created_at": "2025-04-22T22:41:14.196161",
-        "updated_at": "2025-04-22T22:41:14.196165"
-      },
-      "aircraft": {
-        "id": "3050b36d-eefe-4258-9277-b0de04f91097",
-        "model": "Embraer E195",
-        "economic_seats": 120,
-        "premium_seats": 20,
-        "executive_seats": 8,
-        "created_at": "2025-04-22T22:41:14.196679",
-        "updated_at": "2025-04-22T22:41:14.196680"
-      },
-      "packages": [
-        {
-          "id": "96f5dc06-535c-4e3c-bc64-bdc77d5c1b57",
-          "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-          "name": "Package 1",
-          "description": "Package 1 description for flight AA101",
-          "price": 130.19,
-          "created_at": "2025-04-22T22:41:35.462463",
-          "updated_at": "2025-04-22T22:41:35.462467"
-        },
-        {
-          "id": "f22f2fc2-cf4b-456f-9953-c4e94608ff92",
-          "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-          "name": "Package 2",
-          "description": "Package 2 description for flight AA101",
-          "price": 227.28,
-          "created_at": "2025-04-22T22:41:35.462497",
-          "updated_at": "2025-04-22T22:41:35.462498"
-        }
-      ],
-      "seat_classes": [
-        {
-          "id": "2224e467-abea-48b6-ac51-0f756bc9cdb8",
-          "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-          "type": "executive",
-          "available_seats": 2,
-          "price": 900,
-          "created_at": "2025-05-26T01:11:23.407Z",
-          "updated_at": "2025-05-26T01:11:23.407Z"
-        }
-      ]
-    },
-    {
       "id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "flight_number": "BA202",
       "origin_airport_id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
@@ -226,7 +155,7 @@
       },
       "seat_classes": [
         {
-          "id": "4b7d0ed1-4555-45cf-bd88-fe0cdb40f6b0",
+          "id": "e9fa61a0-a160-46b8-9bea-b9e9c741c46a",
           "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
           "type": "economic",
           "available_seats": 34,
@@ -235,27 +164,27 @@
           "updated_at": "2025-04-22T22:41:35.461358"
         },
         {
-          "id": "bca1f845-e6d3-4fa5-8a33-b4679a781414",
-          "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
-          "type": "executive",
-          "available_seats": 48,
-          "price": 325.13,
-          "created_at": "2025-04-22T22:41:35.461524",
-          "updated_at": "2025-04-22T22:41:35.461526"
-        },
-        {
-          "id": "",
+          "id": "072115bb-f9e2-4420-8b41-49d83cad9c51",
           "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
           "type": "premium",
           "available_seats": 20,
           "price": 800,
           "created_at": "2025-05-26T01:09:12.385Z",
           "updated_at": "2025-05-26T01:09:12.385Z"
+        },
+        {
+          "id": "82621d99-c46b-4ab9-b163-01cc86388bee",
+          "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
+          "type": "executive",
+          "available_seats": 48,
+          "price": 325.13,
+          "created_at": "2025-04-22T22:41:35.461524",
+          "updated_at": "2025-04-22T22:41:35.461526"
         }
       ],
       "packages": [
         {
-          "id": "d6cd9f8d-ba46-43c1-a042-7d672ca96c8e",
+          "id": "2cd82148-bcee-4063-8d31-67588dfc7231",
           "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
           "name": "Package 1",
           "description": "Package 1 description for flight BA202",
@@ -264,7 +193,7 @@
           "updated_at": "2025-04-22T22:41:35.462512"
         },
         {
-          "id": "7d8afdc8-89e2-4ffc-9deb-78be25579c1f",
+          "id": "e123055e-ca18-46b5-b716-8a916cabc352",
           "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
           "name": "Package 2",
           "description": "Package 2 description for flight BA202",
@@ -275,49 +204,88 @@
       ]
     },
     {
-      "id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
-      "flight_number": "LA303",
-      "origin_airport_id": "e92c2dbc-2f3d-488e-94cf-e6abe38be6aa",
+      "id": "c5f9ce24-4d0d-46f7-8d3e-3162106f3236",
+      "flight_number": "EK4805",
+      "origin_airport_id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
       "destination_airport_id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
-      "departure_date": "2025-04-19",
-      "departure_time": "22:45",
-      "arrival_date": "2025-04-20",
-      "arrival_time": "05:30",
-      "aircraft_id": "3050b36d-eefe-4258-9277-b0de04f91097",
-      "created_at": "2025-04-22T22:41:14.196994",
-      "updated_at": "2025-04-22T22:41:14.196995"
+      "departure_date": "2025-05-28",
+      "departure_time": "00:33",
+      "arrival_date": "2025-05-28",
+      "arrival_time": "06:33",
+      "aircraft_id": "c7d7f6a4-b2cc-4d68-a47f-fad898ff4963",
+      "created_at": "2025-05-27T03:33:11.124Z",
+      "updated_at": "2025-05-27T03:33:11.124Z",
+      "origin_airport": {
+        "id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
+        "code": "GRU",
+        "name": "São Paulo/Guarulhos International Airport",
+        "city": "São Paulo",
+        "country": "Brazil",
+        "created_at": "2025-04-22T22:41:14.196161",
+        "updated_at": "2025-04-22T22:41:14.196165"
+      },
+      "destination_airport": {
+        "id": "0cd4870b-a1c7-48fe-84fc-84a45ed0a975",
+        "code": "JFK",
+        "name": "John F. Kennedy International Airport",
+        "city": "New York",
+        "country": "USA",
+        "created_at": "2025-04-22T22:41:14.195940",
+        "updated_at": "2025-04-22T22:41:14.195948"
+      },
+      "aircraft": {
+        "id": "c7d7f6a4-b2cc-4d68-a47f-fad898ff4963",
+        "model": "Airbus A320",
+        "economic_seats": 150,
+        "premium_seats": 24,
+        "executive_seats": 12,
+        "created_at": "2025-04-22T22:41:14.196644",
+        "updated_at": "2025-04-22T22:41:14.196647"
+      },
+      "seat_classes": [
+        {
+          "id": "eb185581-d300-401a-bdff-230515a8d95f",
+          "flight_id": "c5f9ce24-4d0d-46f7-8d3e-3162106f3236",
+          "type": "premium",
+          "available_seats": 90,
+          "price": 200,
+          "created_at": "2025-05-27T03:33:32.316Z",
+          "updated_at": "2025-05-27T03:33:32.316Z"
+        },
+        {
+          "id": "370387a5-bb74-49be-b69d-4942ce019b27",
+          "flight_id": "c5f9ce24-4d0d-46f7-8d3e-3162106f3236",
+          "type": "economic",
+          "available_seats": 200,
+          "price": 40,
+          "created_at": "2025-05-27T03:34:17.409Z",
+          "updated_at": "2025-05-27T03:34:17.409Z"
+        }
+      ],
+      "packages": []
     }
   ],
   "seat_classes": [
     {
-      "id": "3569d108-1c03-4e71-973d-cd9205a12039",
-      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
-      "type": "economic",
-      "available_seats": 47,
-      "price": 991.59,
-      "created_at": "2025-04-22T22:41:35.461699",
-      "updated_at": "2025-04-22T22:41:35.461701"
-    },
-    {
-      "id": "3cc25a01-3b93-437f-a469-0a62b8451c8e",
-      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
+      "id": "ebf7f373-6f22-43d6-9dfc-fe944d49833e",
+      "flight_id": "c5f9ce24-4d0d-46f7-8d3e-3162106f3236",
       "type": "premium",
-      "available_seats": 18,
-      "price": 236.56,
-      "created_at": "2025-04-22T22:41:35.461946",
-      "updated_at": "2025-04-22T22:41:35.461949"
+      "available_seats": 90,
+      "price": 200,
+      "created_at": "2025-05-27T03:33:32.316Z",
+      "updated_at": "2025-05-27T03:33:32.316Z"
     },
     {
-      "id": "9fd4987e-b1c0-4251-b421-883a91913c9d",
-      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
-      "type": "executive",
-      "available_seats": 48,
-      "price": 268.98,
-      "created_at": "2025-04-22T22:41:35.462120",
-      "updated_at": "2025-04-22T22:41:35.462125"
+      "id": "727d98e1-918b-4421-8704-022bdd8c2bce",
+      "flight_id": "c5f9ce24-4d0d-46f7-8d3e-3162106f3236",
+      "type": "economic",
+      "available_seats": 200,
+      "price": 40,
+      "created_at": "2025-05-27T03:34:17.409Z",
+      "updated_at": "2025-05-27T03:34:17.409Z"
     },
     {
-      "id": "ffc0d44d-1901-46e7-8e4e-ef65c86c9765",
+      "id": "9812e5e8-4967-4d6b-b366-723b546896d4",
       "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "type": "economic",
       "available_seats": 34,
@@ -326,7 +294,7 @@
       "updated_at": "2025-04-22T22:41:35.461358"
     },
     {
-      "id": "9547a1b4-4407-4a38-b32e-f3e8b6ea952c",
+      "id": "42a52d62-2e9f-4abb-8184-2b9ee542581d",
       "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "type": "premium",
       "available_seats": 20,
@@ -335,45 +303,18 @@
       "updated_at": "2025-05-26T01:09:12.385Z"
     },
     {
-      "id": "6854038b-204d-4687-8f58-71883cb0a2ed",
+      "id": "83ff32a7-d69c-4b18-ac75-da48f3549118",
       "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "type": "executive",
       "available_seats": 48,
       "price": 325.13,
       "created_at": "2025-04-22T22:41:35.461524",
       "updated_at": "2025-04-22T22:41:35.461526"
-    },
-    {
-      "id": "6087d806-6ed3-425e-9db4-ccc217cfd20e",
-      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-      "type": "executive",
-      "available_seats": 2,
-      "price": 900,
-      "created_at": "2025-05-26T01:11:23.407Z",
-      "updated_at": "2025-05-26T01:11:23.407Z"
     }
   ],
   "packages": [
     {
-      "id": "7c75b249-41d8-41ef-9087-d87041667650",
-      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
-      "name": "Package 1",
-      "description": "Package 1 description for flight LA303",
-      "price": 269.73,
-      "created_at": "2025-04-22T22:41:35.462533",
-      "updated_at": "2025-04-22T22:41:35.462535"
-    },
-    {
-      "id": "5185459f-8859-44a6-9138-4fbc1d38343a",
-      "flight_id": "ccc7a351-f22c-47c1-8dee-cf86ec707924",
-      "name": "Package 2",
-      "description": "Package 2 description for flight LA303",
-      "price": 245.66,
-      "created_at": "2025-04-22T22:41:35.462572",
-      "updated_at": "2025-04-22T22:41:35.462574"
-    },
-    {
-      "id": "038107f7-d80d-46a5-9dec-b1c6f0c227be",
+      "id": "e2289882-c9d2-41f9-823a-92c8db4a031c",
       "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "name": "Package 1",
       "description": "Package 1 description for flight BA202",
@@ -382,31 +323,13 @@
       "updated_at": "2025-04-22T22:41:35.462512"
     },
     {
-      "id": "562de16f-9acc-4f29-8788-3d978c61cca2",
+      "id": "2cbbfb3e-be76-48cc-963b-e03deb898fe0",
       "flight_id": "a88b61d2-2f38-4d23-a343-4a381bcac373",
       "name": "Package 2",
       "description": "Package 2 description for flight BA202",
       "price": 212.29,
       "created_at": "2025-04-22T22:41:35.462522",
       "updated_at": "2025-04-22T22:41:35.462523"
-    },
-    {
-      "id": "cc288e84-6cd1-440d-8a38-ebaac5ae1088",
-      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-      "name": "Package 1",
-      "description": "Package 1 description for flight AA101",
-      "price": 130.19,
-      "created_at": "2025-04-22T22:41:35.462463",
-      "updated_at": "2025-04-22T22:41:35.462467"
-    },
-    {
-      "id": "925f59b8-2e77-4d39-9e61-cb771c90c1d0",
-      "flight_id": "1cdd4852-f4fc-4c2e-82f9-fe18558e8cfa",
-      "name": "Package 2",
-      "description": "Package 2 description for flight AA101",
-      "price": 227.28,
-      "created_at": "2025-04-22T22:41:35.462497",
-      "updated_at": "2025-04-22T22:41:35.462498"
     }
   ],
   "bookings": [

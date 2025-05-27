@@ -27,14 +27,14 @@
     <div class="form-grid">
         <div>
             <label for="numeroVoo">Número do Voo</label>
-            <input id="numeroVoo" [value]="flightIsEditing.flight_number" [disabled]="!isEditing"
+            <input id="numeroVoo" name="flight_number" [value]="flightIsEditing.flight_number" [disabled]="!isEditing"
                 [className]="!isEditing && 'disabled'" [(ngModel)]="flightIsEditing.flight_number" />
         </div>
         <div>
             <label for="aeronave">Aeronave</label>
-            <select id="aeronave" [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
+            <select id="aeronave" name="aircraft_id" [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
                 [(ngModel)]="flightIsEditing.aircraft_id">
-                <option disabled selected>Selecione a aeronave</option>
+                <option selected>Selecione a aeronave</option>
                 @for (aircraft of aircrafts; track aircraft.id) {
                 <option [value]="aircraft.id" [selected]="aircraft.id == flightIsEditing.aircraft.id">{{ aircraft.text
                     }}</option>
@@ -46,8 +46,8 @@
             <label for="origem">Origem</label>
             <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports"
                 [id]="flightIsEditing.origin_airport_id" (idSelected)="flightIsEditing.origin_airport_id = $event">
-                <input #autocompleteInput id="origem" placeholder="São Paulo (GRU)" [disabled]="!isEditing"
-                    [className]="!isEditing && 'disabled'" />
+                <input #autocompleteInput id="origem" name="origin_airport" placeholder="São Paulo (GRU)"
+                    [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
             </app-input-autocomplete>
         </div>
 
@@ -56,30 +56,34 @@
             <app-input-autocomplete (validChange)="isValidDestinationAirport = $event" [strings]="airports"
                 [id]="flightIsEditing.destination_airport_id"
                 (idSelected)="flightIsEditing.destination_airport_id = $event">
-                <input #autocompleteInput id="destino" placeholder="Rio de Janeiro (SDU)" [disabled]="!isEditing"
-                    [className]="!isEditing && 'disabled'" />
+                <input #autocompleteInput id="destino" name="destination_airport" placeholder="Rio de Janeiro (SDU)"
+                    [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
             </app-input-autocomplete>
         </div>
 
         <div>
             <label for="dataPartida">Data de Partida</label>
-            <input type="date" id="dataPartida" [value]="flightIsEditing.departure_date" [disabled]="!isEditing"
-                [className]="!isEditing && 'disabled'" [(ngModel)]="flightIsEditing.departure_date" />
+            <input type="date" id="dataPartida" name="departure_date" [value]="flightIsEditing.departure_date"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
+                [(ngModel)]="flightIsEditing.departure_date" />
         </div>
         <div>
             <label for="horaPartida">Hora de Partida</label>
-            <input type="time" id="horaPartida" [value]="flightIsEditing.departure_time" [disabled]="!isEditing"
-                [className]="!isEditing && 'disabled'" [(ngModel)]="flightIsEditing.departure_time" />
+            <input type="time" id="horaPartida" name="departure_time" [value]="flightIsEditing.departure_time"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
+                [(ngModel)]="flightIsEditing.departure_time" />
         </div>
         <div>
             <label for="dataChegada">Data de Chegada</label>
-            <input type="date" id="dataChegada" [value]="flightIsEditing.arrival_date" [disabled]="!isEditing"
-                [className]="!isEditing && 'disabled'" [(ngModel)]="flightIsEditing.arrival_date" />
+            <input type="date" id="dataChegada" name="arrival_date" [value]="flightIsEditing.arrival_date"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
+                [(ngModel)]="flightIsEditing.arrival_date" />
         </div>
         <div>
             <label for="horaChegada">Hora de Chegada</label>
-            <input type="time" id="horaChegada" [value]="flightIsEditing.arrival_time" [disabled]="!isEditing"
-                [className]="!isEditing && 'disabled'" [(ngModel)]="flightIsEditing.arrival_time" />
+            <input type="time" id="horaChegada" name="arrival_time" [value]="flightIsEditing.arrival_time"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
+                [(ngModel)]="flightIsEditing.arrival_time" />
         </div>
     </div>
 
@@ -89,7 +93,8 @@
     <div class="form-grid form-grid-assentos">
         <div>
             <label>Tipo</label>
-            <select [disabled]="!isEditing" [className]="!isEditing && 'disabled'" [(ngModel)]="class.type">
+            <select name="seat_class_type_{{ $index }}" [disabled]="!isEditing" [className]="!isEditing && 'disabled'"
+                [(ngModel)]="class.type">
                 @for (type of seatTypes; track type.value) {
                 <option [selected]="class.type == type.value" [value]="type.value">{{ type.label }}</option>
                 }
@@ -97,12 +102,12 @@
         </div>
         <div>
             <label>Assentos</label>
-            <input type="number" [(ngModel)]="class.available_seats" [disabled]="!isEditing"
-                [className]="!isEditing && 'disabled'" />
+            <input type="number" name="seat_class_seats_{{ $index }}" [(ngModel)]="class.available_seats"
+                [disabled]="!isEditing" [className]="!isEditing && 'disabled'" />
         </div>
         <div>
             <label>Preço (R$)</label>
-            <input type="number" [(ngModel)]="class.price" [disabled]="!isEditing"
+            <input type="number" name="seat_class_price_{{ $index }}" [(ngModel)]="class.price" [disabled]="!isEditing"
                 [className]="!isEditing && 'disabled'" />
         </div>
         @if(isEditing) {
@@ -118,9 +123,12 @@
     <h3 class="subtitle">Pacotes Adicionais</h3>
     @for (package of flightIsEditing.packages; track $index) {
     <div class="form-grid form-grid-pacotes">
-        <div><label>Nome</label><input [(ngModel)]="package.name" [disabled]="!isEditing" /></div>
-        <div><label>Descrição</label><input [(ngModel)]="package.description" [disabled]="!isEditing" /></div>
-        <div><label>Preço (R$)</label><input type="number" [(ngModel)]="package.price" [disabled]="!isEditing" /></div>
+        <div><label>Nome</label><input name="package_name_{{ $index }}" [(ngModel)]="package.name"
+                [disabled]="!isEditing" /></div>
+        <div><label>Descrição</label><input name="package_description_{{ $index }}" [(ngModel)]="package.description"
+                [disabled]="!isEditing" /></div>
+        <div><label>Preço (R$)</label><input name="package_price_{{ $index }}" type="number" [(ngModel)]="package.price"
+                [disabled]="!isEditing" /></div>
         @if(isEditing) {
         <div><button class="remove-button" (click)="removePackageEditingFlight($index)">🗑</button></div>
         }
@@ -139,56 +147,109 @@
     @else {
     <h1 class="title">Novo Voo</h1>
 
-    <div class="form-grid">
-        <div>
-            <label>Número do Voo</label>
-            <input [(ngModel)]="newFlight.flight_number" placeholder="LA1234" />
-        </div>
-        <div>
-            <label>Aeronave</label>
-            <select [(ngModel)]="newFlight.aircraft_id">
-                <option disabled selected>Selecione a aeronave</option>
-                @for (aircraft of aircrafts; track aircraft.id) {
-                <option [value]="aircraft.id">{{ aircraft.text }}</option>
-                }
-            </select>
+    <form (submit)="onSubmitNewFlight()">
+        <div class="form-grid">
+            <div>
+                <label>Número do Voo</label>
+                <input name="flight_number" [(ngModel)]="newFlight.flight_number" class="disabled" disabled
+                    placeholder="LA1234" required>
+            </div>
+            <div>
+                <label for="aeronave">Aeronave</label>
+                <select name="aircraft_id" id="aeronave" [(ngModel)]="newFlight.aircraft_id" required>
+                    <option value="" disabled selected>Selecione a aeronave</option>
+                    @for (aircraft of aircrafts; track aircraft.id) {
+                    <option [value]="aircraft.id">{{ aircraft.text }}</option>
+                    }
+                </select>
+            </div>
+
+            <div>
+                <label for="origem">Origem</label>
+                <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports"
+                    [id]="newFlight.origin_airport_id" (idSelected)="newFlight.origin_airport_id = $event">
+                    <input name="origin_airport" #autocompleteInput id="origem" placeholder="São Paulo (GRU)"
+                        required />
+                </app-input-autocomplete>
+            </div>
+
+            <div>
+                <label for="destino">Destino</label>
+                <app-input-autocomplete (validChange)="isValidDestinationAirport = $event" [strings]="airports"
+                    [id]="newFlight.destination_airport_id" (idSelected)="newFlight.destination_airport_id = $event">
+                    <input name="destination_airport" #autocompleteInput id="destino" placeholder="Rio de Janeiro (SDU)"
+                        required />
+                </app-input-autocomplete>
+            </div>
+
+            <div>
+                <label>Data de Partida</label>
+                <input name="departure_date" type="date" [(ngModel)]="newFlight.departure_date" required />
+            </div>
+            <div>
+                <label>Hora de Partida</label>
+                <input name="departure_time" type="time" [(ngModel)]="newFlight.departure_time" required />
+            </div>
+            <div>
+                <label>Data de Chegada</label>
+                <input name="arrival_date" type="date" [(ngModel)]="newFlight.arrival_date" required />
+            </div>
+            <div>
+                <label>Hora de Chegada</label>
+                <input name="arrival_time" type="time" [(ngModel)]="newFlight.arrival_time" required />
+            </div>
         </div>
 
-        <div>
-            <label>Origem</label>
-            <app-input-autocomplete (validChange)="isValidOriginAirport = $event" [strings]="airports">
-                <input [value]="newFlight?.origin_airport?.name + ' ' + newFlight?.origin_airport?.code" />
-            </app-input-autocomplete>
-        </div>
+        <h3 class="subtitle">Classes de Assentos</h3>
+        @for (class of newFlight.seat_classes; track $index) {
+        <div class="form-grid form-grid-assentos">
+            <div>
+                <label>Tipo</label>
+                <select name="seat_class_type_{{ $index }}" [(ngModel)]="class.type" required>
+                    @for (type of seatTypes; track type.value) {
+                    <option [selected]="class.type == type.value" [value]="type.value">{{ type.label }}</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <label>Assentos</label>
+                <input name="seat_class_seats_{{ $index }}" type="number" [(ngModel)]="class.available_seats"
+                    required />
+            </div>
+            <div>
+                <label>Preço (R$)</label>
+                <input name="seat_class_price_{{ $index }}" type="number" [(ngModel)]="class.price" required />
+            </div>
 
-        <div>
-            <label>Destino</label>
-            <app-input-autocomplete (validChange)="isValidDestinationAirport = $event" [strings]="airports">
-                <input [value]="newFlight?.destination_airport?.name + ' ' + newFlight?.destination_airport?.code" />
-            </app-input-autocomplete>
-        </div>
+            <div><button type="button" class="remove-button" (click)="removeClassNewFlight($index)">🗑</button></div>
 
-        <div>
-            <label>Data de Partida</label>
-            <input type="date" [(ngModel)]="newFlight.departure_date" />
         </div>
-        <div>
-            <label>Hora de Partida</label>
-            <input type="time" [(ngModel)]="newFlight.departure_time" />
-        </div>
-        <div>
-            <label>Data de Chegada</label>
-            <input type="date" [(ngModel)]="newFlight.arrival_date" />
-        </div>
-        <div>
-            <label>Hora de Chegada</label>
-            <input type="time" [(ngModel)]="newFlight.arrival_time" />
-        </div>
-    </div>
+        }
+        <button type="button" class="add-button" [disabled]="newFlight.seat_classes.length > 2"
+            [class]="newFlight.seat_classes.length > 2 ? 'disabled' : ''" (click)="addClassNewFlight()">+
+            Adicionar Classe</button>
 
-    <!-- Botão final -->
-    <div class="actions">
-        <button class="submit-button">Cadastrar Voo</button>
-    </div>
+        <!-- PACOTES -->
+        <h3 class="subtitle">Pacotes Adicionais</h3>
+        @for (package of newFlight.packages; track $index) {
+        <div class="form-grid form-grid-pacotes">
+            <div><label>Nome</label><input name="package_name_{{ $index }}" [(ngModel)]="package.name" required /></div>
+            <div><label>Descrição</label><input name="package_description_{{ $index }}"
+                    [(ngModel)]="package.description" required /></div>
+            <div><label>Preço (R$)</label><input name="package_price_{{ $index }}" type="number"
+                    [(ngModel)]="package.price" required /></div>
+            <div><button type="button" class="remove-button" (click)="removePackageNewFlight($index)">🗑</button></div>
+        </div>
+        }
+        <button [disabled]="newFlight.packages.length > 2" [class]="newFlight.packages.length > 2 ? 'disabled' : ''"
+            class="add-button" type="button" (click)="addPackageNewFlight()">+ Adicionar
+            Pacote</button>
+
+        <!-- Botão final -->
+        <div class="actions">
+            <button type="submit" class="submit-button">Cadastrar Voo</button>
+        </div>
+    </form>
     }
+
 </div>
