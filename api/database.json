@@ -157,6 +157,25 @@
         "city": "São Paulo",
         "state": "SP"
       }
+    },
+    {
+      "id": "7cfd2824-0ab4-4bf1-a964-602f5ef0748c",
+      "name": "Eduardo Mendes Meireles",
+      "email": "eduardo.mendess@icloud.com",
+      "password_hash": "edu123",
+      "is_admin": false,
+      "created_at": "2025-05-27T04:47:08.191Z",
+      "updated_at": "2025-05-27T04:47:08.191Z",
+      "telefone": "1194680117",
+      "date": "2025-05-29",
+      "address": {
+        "cep": "04851301",
+        "street": "Rua Lopez Freire",
+        "number": "",
+        "neighborhood": "Jardim Sipramar",
+        "city": "São Paulo",
+        "state": "SP"
+      }
     }
   ],
   "airports": [
