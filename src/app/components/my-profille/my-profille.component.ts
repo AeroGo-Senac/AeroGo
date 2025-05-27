@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
+import { User } from '../../../types';
 
 @Component({
   selector: 'app-my-profille',
@@ -8,6 +9,7 @@ import { UserService } from '../../core/services/user.service';
   styleUrl: './my-profille.component.css'
 })
 export class MyProfilleComponent implements OnInit{
+  user?: User;
   userProfile = {
     name: '',
     email: '',
@@ -33,6 +35,7 @@ export class MyProfilleComponent implements OnInit{
           date: user.date,
           address: user.address.street
         };
+        this.user = user; // <-- Adicione esta linha!
       });
     }
   }

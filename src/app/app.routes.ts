@@ -19,6 +19,8 @@ export const routes: Routes = [
   { path: 'flights', component: FlightsComponent },
   { path: 'flightsdetails', component: DetalhesVooComponent, title: 'Detalhes do Voo' },
   { path: 'signup', component: SignupComponent },
+  { path: 'payment/:flight_number', component: PaymentComponent },
+  { path: 'flightsdetails/:flight_number', component: DetalhesVooComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

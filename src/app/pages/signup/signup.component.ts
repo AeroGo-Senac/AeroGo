@@ -96,7 +96,6 @@ export class SignupComponent {
           this.message = 'Este e-mail já está cadastrado. Por favor, use outro e-mail.';
 
         } else {
-
           this.userService.newUser(this.user).subscribe(
             (response) => {
               console.log('Registro bem-sucedido:', response);

@@ -116,16 +116,9 @@
                 <div class="installments">
                   <label for="selInstallments">Parcelas</label>
                   <select name="selInstallments" id="selInstallments" (change)="selInstallments($event)">
-                    <option value="6419.00" selected>1x de R$ 6419.00 sem juros</option>
-                    <option value="3209.00">2x de R$ 3209.00 sem juros</option>
-                    <option value="2139.00">3x de R$ 2139.00 sem juros</option>
-                    <option value="1604.00">4x de R$ 1604.00 sem juros</option>
-                    <option value="1283.00">5x de R$ 1283.00 sem juros</option>
-                    <option value="1069.00">6x de R$ 1069.00 sem juros</option>
-                    <option value="917.00">7x de R$ 917.00 sem juros</option>
-                    <option value="802.00">8x de R$ 802.00 sem juros</option>
-                    <option value="713.00">9x de R$ 713.00 sem juros</option>
-                    <option value="641.00">10x de R$ 641.00 sem juros</option>
+                      @for (item of installmentsOptions; track item.label) {
+                          <option [value]="item.value" selected>{{ item.label }} sem juros</option>
+                      }
                   </select>
                 </div>
               </div>
@@ -135,28 +128,39 @@
             <div class="purchase-summary">
               <h2>Resumo da Compra</h2>
 
-              <div class="flight-details">
-                <div class="flight-info">
-                  <span>Voo:</span> <span>LA1234</span>
+              @if (flight) {
+                <div class="flight-details">
+                  <div class="flight-info">
+                    <span>Voo:</span> <span>{{flight.flight_number}}</span>
+                  </div>
+                  <div class="flight-info">
+                    <span>Trecho:</span> <span>São → Miami</span>
+                  </div>
+                  <div class="flight-info">
+                    <span>Classe:</span> <span>
+                      {{
+                        seatType === 'economic' ? 'Econômica' :
+                        seatType === 'premium' ? 'Premium' :
+                        seatType === 'executive' ? 'Executiva' : ''
+                      }}
+                    </span>
+                  </div>
+                  <div class="flight-info">
+                    <span>Passageiros:</span> <span>1</span>
+                  </div>
                 </div>
-                <div class="flight-info">
-                  <span>Trecho:</span> <span>São → Miami</span>
+                <div class="subtotal">
+                  <span>Subtotal</span> <span id="subTotal">R$ {{ subtotal }}</span>
                 </div>
-                <div class="flight-info">
-                  <span>Passageiros:</span> <span>1</span>
-                </div>
-              </div>
-              <div class="subtotal">
-                <span>Subtotal</span> <span id="subTotal">R$ {{subtotal}}</span>
-              </div>
 
-              <div class="price-details">
-                <div class="total">
-                  <span><strong>Total</strong></span>
-                  <span><strong>R$ 6419.00</strong></span>
+                <div class="price-details">
+                  <div class="total">
+                    <span><strong>Total</strong></span>
+                    <span><strong>R$ {{total}}</strong></span>
+                  </div>
+                  <p class="txtInstallments">em até 10x sem juros</p>
                 </div>
-                <p class="txtInstallments">em até 10x sem juros</p>
-              </div>
+              }
           
               <button class="finalize-button" (click)="validate()">
                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">

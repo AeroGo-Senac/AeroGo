@@ -176,6 +176,26 @@
         "city": "São Paulo",
         "state": "SP"
       }
+    },
+    {
+      "id": "d95243f2-3755-4c48-aa9e-38c906af66eb",
+      "name": "Arthur",
+      "email": "arthur@email.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-27T14:22:58.755Z",
+      "updated_at": "2025-05-27T14:22:58.755Z",
+      "telefone": "11953049234",
+      "date": "2004-05-02",
+      "address": {
+        "cep": "04741-060",
+        "street": "Rua Leontina Attuy Nogueira",
+        "number": "",
+        "neighborhood": "Jardim Santo Amaro",
+        "city": "São Paulo",
+        "state": "SP"
+      },
+      "number_of_bookings": 1
     }
   ],
   "airports": [
@@ -386,6 +406,43 @@
         }
       ],
       "packages": []
+    },
+    {
+      "id": "be80ef8f-4176-4af2-b4d2-08b5e02f5db0",
+      "flight_number": "NH1867",
+      "origin_airport_id": "6dda3757-2d51-40a6-be9a-7b6d6a81020b",
+      "destination_airport_id": "e92c2dbc-2f3d-488e-94cf-e6abe38be6aa",
+      "departure_date": "2025-07-08",
+      "departure_time": "14:00",
+      "arrival_date": "2025-07-09",
+      "arrival_time": "12:00",
+      "aircraft_id": "58407ba1-77cc-49de-b3a1-20ca549a2cc3",
+      "created_at": "2025-05-27T14:25:19.505Z",
+      "updated_at": "2025-05-27T14:25:19.505Z",
+      "origin_airport": {},
+      "destination_airport": {},
+      "aircraft": {},
+      "seat_classes": [
+        {
+          "id": "",
+          "flight_id": "be80ef8f-4176-4af2-b4d2-08b5e02f5db0",
+          "type": "executive",
+          "available_seats": 32,
+          "price": 990,
+          "created_at": "2025-05-27T14:26:21.629Z",
+          "updated_at": "2025-05-27T14:26:21.629Z"
+        },
+        {
+          "id": "",
+          "flight_id": "be80ef8f-4176-4af2-b4d2-08b5e02f5db0",
+          "type": "economic",
+          "available_seats": 50,
+          "price": 435,
+          "created_at": "2025-05-27T14:26:43.076Z",
+          "updated_at": "2025-05-27T14:26:43.076Z"
+        }
+      ],
+      "packages": []
     }
   ],
   "seat_classes": [
@@ -433,6 +490,24 @@
       "price": 325.13,
       "created_at": "2025-04-22T22:41:35.461524",
       "updated_at": "2025-04-22T22:41:35.461526"
+    },
+    {
+      "id": "b538341d-954e-41cd-8176-8a3ae0cbbe22",
+      "flight_id": "be80ef8f-4176-4af2-b4d2-08b5e02f5db0",
+      "type": "executive",
+      "available_seats": 32,
+      "price": 990,
+      "created_at": "2025-05-27T14:26:21.629Z",
+      "updated_at": "2025-05-27T14:26:21.629Z"
+    },
+    {
+      "id": "ef923b94-f0d2-4ec0-9312-f9022eb88275",
+      "flight_id": "be80ef8f-4176-4af2-b4d2-08b5e02f5db0",
+      "type": "economic",
+      "available_seats": 50,
+      "price": 435,
+      "created_at": "2025-05-27T14:26:43.076Z",
+      "updated_at": "2025-05-27T14:26:43.076Z"
     }
   ],
   "packages": [

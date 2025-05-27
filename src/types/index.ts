@@ -21,6 +21,7 @@ type User = {
   address: Address;
   created_at: Date;
   updated_at: Date;
+  number_of_bookings?: number;
 };
 
 type Airport = {
