@@ -1,75 +1,64 @@
-main {
-  color: #333;
-}
-
-.login-container {
+.signup {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0rem 1rem;
   min-height: 100vh;
   font-family: 'Segoe UI', Inter, sans-serif;
-  margin-bottom: 20px;
 }
 
-.login-card {
-  background-color: white;
-  padding: 2.5rem;
-  border-radius: 1rem;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  text-align: center;
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
 }
 
 .title {
+  text-align: center;
+}
+
+.title h2 {
   font-size: 1.5rem;
   font-weight: 700;
   color: #1a0080;
   margin-bottom: 0.25rem;
 }
 
-.subtitle {
+.title p {
   color: #4a4a4a;
   font-size: 0.95rem;
   margin-bottom: 2rem;
 }
 
-form {
+.form-row {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: left;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 5px;
 }
 
 label {
+  display: block;
   font-weight: 600;
   color: #333;
   font-size: 0.9rem;
 }
 
 input {
+  width: 100%;
+  box-sizing: border-box;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.6rem;
   font-size: 1rem;
-  transition: border 0.2s;
-}
-
-input:focus {
-  outline: none;
-  border-color: #1a0080;
-}
-
-.forgot-password {
-  text-align: right;
-  margin-top: -0.5rem;
-  font-size: 0.875rem;
-}
-
-.forgot-password a {
-  color: #e60073;
-  text-decoration: none;
+  color: #000000;
 }
 
 button {
@@ -77,51 +66,25 @@ button {
   color: white;
   padding: 0.75rem;
   border: none;
-  border-radius: 0.6rem;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
+  width: 100%;
+  font-size: 1em;
+  display: block;
+  margin-top: 20px;
+  font-weight: 600;
 }
 
-.icon {
-  font-size: 1.1rem;
-}
 
-.register {
+.login-link {
+  text-align: center;
   margin-top: 1rem;
   font-size: 0.875rem;
   color: #444;
 }
 
-.register a {
+.login-link a {
   color: #e60073;
   text-decoration: none;
   font-weight: bold;
-}
-
-.demo-info {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  background: #f7f7f7;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: left;
-  color: #555;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: 'Courier New', monospace;
-}
-
-.disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }

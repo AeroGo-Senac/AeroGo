@@ -1,11 +1,24 @@
 type UUID = string;
 
+type Address = {
+  cep: string;
+  street: string;
+  number: string;
+  complement?: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+};
+
 type User = {
   id: UUID;
   email: string;
   name: string;
   password_hash: string;
   is_admin: boolean;
+  telefone: string;
+  date: Date;
+  address: Address;
   created_at: Date;
   updated_at: Date;
 };

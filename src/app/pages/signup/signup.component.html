@@ -1,40 +1,69 @@
-<div class="container">
+<main>
     <app-header></app-header>
-    <main class="login">
-        <div class="login-container">
-            <div class="login-card">
-                <h2 class="title">Crie sua conta</h2>
-                <p class="subtitle">Junte-se a nós para reservar voos e acessar ofertas exclusivas</p>
+    <div class="signup">
+        <div class="container">
+            <div class="title">
+                <h2>Crie sua conta</h2>
+                <p>Junte-se a nós para reservar voos e acessar ofertas exclusivas</p>
+            </div>
 
-                <form >
-                    <label for="name">Nome Completo</label>
-                    <input id="name" type="name" name="name" placeholder="Seu nome completo" [(ngModel)]="user.name" />
-
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" [(ngModel)]="user.name">
+                </div>
+                <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" type="email" name="email" placeholder="seu@email.com" [(ngModel)]="user.email"  />
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" [(ngModel)]="user.email">
+                </div>
+            </div>
 
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX"
+                        [(ngModel)]="user.telefone">
+                </div>
+
+                <div class="form-group">
+                    <label for="data_nascimento">Data de Nascimento</label>
+                    <input type="date" id="data_nascimento" name="data_nascimento" [(ngModel)]="user.date">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="cep">Cep</label>
+                <input type="cep" id="cep" name="cep" placeholder="00000-000" [(ngModel)]="user.address.cep"
+                    (blur)="buscarEndereco()">
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" readonly
+                    placeholder="Endereço será preenchido automaticamente" [value]="formatarEndereco()">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input id="senha" type="password" name="senha" placeholder="••••••••" [(ngModel)]="user.password_hash"  />
+                    <input type="password" id="senha" name="senha" placeholder="********"
+                        [(ngModel)]="user.password_hash">
+                </div>
+                <div class="form-group">
+                    <label for="confirmar_senha">Confirmar senha</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="********"
+                        [(ngModel)]="confirmPassword">
+                </div>
+            </div>
 
-                    <label for="senha">Confirmar senha</label>
-                    <input id="Confirmar-senha" type="password" name="Confirmar-senha" placeholder="••••••••" [(ngModel)]="confirmPassword"  />
+            <p style="color: red; text-align: center;">{{message}}</p>
 
-                    <p style="color: red;">{{message}}</p>
+            <button type="submit" (click)="register()">Cadastrar</button>
 
-                    <button type="submit" (click)="register()" >
-                        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span> Cadastrar
-                    </button>
-                </form>
-
-                <p class="register">
-                    Já tem uma conta? 
-                    <a href="/login">Entre aqui</a>
-                </p>
-
+            <div class="login-link">
+                Já tem uma conta? <a href="#">Entre aqui</a>
             </div>
         </div>
+    </div>
 
-
-    </main>
-
-</div>
+</main>

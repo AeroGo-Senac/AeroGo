@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import type { User } from '../../../types';
-import * as uuid from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +17,10 @@ export class UserService {
 
   getUserByEmailAndPassword(email: string, password: string): Observable<User[]> {
     return this.http.get<any>(`${this.apiUrl}?email=${email}&password_hash=${password}`);
+  }
+
+   getAddressByCep(cep: string): Observable<any> {
+    return this.http.get(`https://viacep.com.br/ws/${cep}/json/`);
   }
 
   newUser(user: User): Observable<User> {

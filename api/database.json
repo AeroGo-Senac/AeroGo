@@ -53,6 +53,110 @@
       "is_admin": false,
       "created_at": "2025-05-25T17:46:00.335Z",
       "updated_at": "2025-05-25T17:46:00.335Z"
+    },
+    {
+      "id": "45c2cebb-b541-4776-a0ee-c99c5cfc333b",
+      "name": "MundoTec",
+      "email": "macielvinicius50kj0@gmail.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-26T02:34:02.090Z",
+      "updated_at": "2025-05-26T02:34:02.090Z"
+    },
+    {
+      "id": "97f60cfc-37cf-414a-b117-28c5c7fbb1f9",
+      "name": "maciel",
+      "email": "maciel123",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-27T01:54:35.312Z",
+      "updated_at": "2025-05-27T01:54:35.312Z",
+      "telefone": "12345678",
+      "date": "2025-05-08",
+      "address": {
+        "cep": "1234",
+        "street": "rua lopes",
+        "number": "",
+        "neighborhood": "",
+        "city": "",
+        "state": ""
+      }
+    },
+    {
+      "id": "4994cd2e-10f0-43b3-94a4-4ae15d68f946",
+      "name": "lucas",
+      "email": "lucas123",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-27T02:25:21.016Z",
+      "updated_at": "2025-05-27T02:25:21.016Z",
+      "telefone": "9090",
+      "date": "2025-05-08",
+      "address": {
+        "cep": "05508000",
+        "street": "Avenida Professor Lineu Prestes",
+        "number": "",
+        "neighborhood": "Butantã",
+        "city": "São Paulo",
+        "state": "SP"
+      }
+    },
+    {
+      "id": "c30d06fe-bbae-4d59-9350-3fb9f5c78a88",
+      "name": "maciel",
+      "email": "123",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-27T02:44:08.945Z",
+      "updated_at": "2025-05-27T02:44:08.945Z",
+      "telefone": "123",
+      "date": "2025-05-27T02:44:08.945Z",
+      "address": {
+        "cep": "05508000",
+        "street": "Avenida Professor Lineu Prestes",
+        "number": "",
+        "neighborhood": "Butantã",
+        "city": "São Paulo",
+        "state": "SP"
+      }
+    },
+    {
+      "id": "be7b3699-f09b-4078-bffb-a2ea702444af",
+      "name": "jubileu",
+      "email": "a",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-27T02:48:15.318Z",
+      "updated_at": "2025-05-27T02:48:15.318Z",
+      "telefone": "1232133434",
+      "date": "2025-05-15",
+      "address": {
+        "cep": "05508000",
+        "street": "Avenida Professor Lineu Prestes",
+        "number": "",
+        "neighborhood": "Butantã",
+        "city": "São Paulo",
+        "state": "SP"
+      }
+    },
+    {
+      "id": "fa536d48-33f2-4ef1-905b-759b275ce00a",
+      "name": "jubileu",
+      "email": "aa",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-27T02:52:11.450Z",
+      "updated_at": "2025-05-27T02:52:11.450Z",
+      "telefone": "a",
+      "date": "2025-05-07",
+      "address": {
+        "cep": "05508000",
+        "street": "Avenida Professor Lineu Prestes",
+        "number": "",
+        "neighborhood": "Butantã",
+        "city": "São Paulo",
+        "state": "SP"
+      }
     }
   ],
   "airports": [

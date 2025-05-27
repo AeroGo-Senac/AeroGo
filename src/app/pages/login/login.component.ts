@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { UserService } from '../../core/services/user.service';
-import type { User } from '../../../types';
+import { User } from '../../../types';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [HeaderComponent, FormsModule],
+  imports: [HeaderComponent, FormsModule ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 
 export class LoginComponent {
 
-  constructor(private userService: UserService) { }
+constructor(private userService: UserService, private router: Router) { }
+
+
   user = {
     email: '',
     password: '',
@@ -40,7 +43,13 @@ export class LoginComponent {
         console.log('Login response:', response);
         if (response.length > 0) {
           const user: User = response[0];
+          localStorage.setItem('currentUser', JSON.stringify({
+          id: user.id,
+          name: user.name,
+          email: user.email
+        }));
           alert(`Bem-vindo, ${user.name}!`);
+          this.router.navigate(['']);
         } else {
           this.message = 'Email ou senha inválidos';
         }
