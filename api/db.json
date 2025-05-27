@@ -1,57 +1,57 @@
 {
   "itens": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nike Air Max 270",
       "price": 150
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Adidas Ultraboost",
       "price": 180
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Puma RS-X",
       "price": 120
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Reebok Classic",
       "price": 100
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "New Balance 574",
       "price": 110
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Asics Gel-Lyte III",
       "price": 130
     }
   ],
   "carrinho": [
     {
-      "id": 1,
+      "id": "1",
       "id_user": 1,
       "name": "Nike Air Max 270",
       "price": 150
     },
     {
-      "id": 2,
+      "id": "2",
       "id_user": 1,
       "name": "Adidas Ultraboost",
       "price": 180
     },
     {
-      "id": 3,
+      "id": "3",
       "id_user": 2,
       "name": "Puma RS-X",
       "price": 120
     },
     {
-      "id": 4,
+      "id": "4",
       "id_user": 2,
       "name": "Reebok Classic",
       "price": 100
@@ -59,16 +59,114 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "",
       "password": "123456"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jane Smith",
       "email": "",
       "password": "abcdef"
+    },
+     {
+      "id": "1",
+      "name": "John Doe",
+      "email": "",
+      "password": "123456",
+      "telefone": "",
+      "date": "",
+      "address": {
+        "cep": "",
+        "street": "",
+        "number": "",
+        "complement": "",
+        "neighborhood": "",
+        "city": "",
+        "state": ""
+      }
+    },
+    {
+      "id": "",
+      "name": "Marciel",
+      "email": "macielvinicius500@gmail.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-24T21:51:51.716Z",
+      "updated_at": "2025-05-24T21:51:51.716Z"
+    },
+    {
+      "id": "",
+      "name": "Mickael",
+      "email": "mickaelcosta431@gmail.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-24T22:00:34.724Z",
+      "updated_at": "2025-05-24T22:00:34.724Z"
+    },
+    {
+      "id": "",
+      "name": "maciel",
+      "email": "macielvinicius5002@gmail.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-24T23:07:30.180Z",
+      "updated_at": "2025-05-24T23:07:30.180Z"
+    },
+    {
+      "id": "",
+      "name": "MundoTec",
+      "email": "mickaelcosta431@gmail.com",
+      "password_hash": "45",
+      "is_admin": false,
+      "created_at": "2025-05-25T16:45:19.705Z",
+      "updated_at": "2025-05-25T16:45:19.705Z"
+    },
+    {
+      "id": "",
+      "name": "s",
+      "email": "macielvinicius5050@gmail.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-25T16:51:05.805Z",
+      "updated_at": "2025-05-25T16:51:05.805Z"
+    },
+    {
+      "id": "",
+      "name": "gagdhashgfhasgfsdfhdshfhdshfsd",
+      "email": "macielvinicius2033305@gmail.com",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-25T16:57:25.745Z",
+      "updated_at": "2025-05-25T16:57:25.745Z"
+    },
+    {
+      "id": "",
+      "name": "eduardo",
+      "email": "maciel90",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-25T17:24:02.732Z",
+      "updated_at": "2025-05-25T17:24:02.732Z"
+    },
+    {
+      "id": "a966da20-5355-4f72-aa4d-2627a256cea3",
+      "name": "maciell",
+      "email": "m123",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-25T19:00:23.436Z",
+      "updated_at": "2025-05-25T19:00:23.436Z"
+    },
+    {
+      "id": "5e7a6387-d60d-40a2-81e5-5a36d4a02b00",
+      "name": "Mickael",
+      "email": "eduardo.mendess@icloud.comm",
+      "password_hash": "123",
+      "is_admin": false,
+      "created_at": "2025-05-25T19:51:09.857Z",
+      "updated_at": "2025-05-25T19:51:09.857Z"
     }
   ]
 }
