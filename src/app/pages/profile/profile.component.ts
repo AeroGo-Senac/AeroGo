@@ -4,6 +4,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { MyDocumentsComponent } from '../../components/my-documents/my-documents.component';
 import { MyProfilleComponent } from '../../components/my-profille/my-profille.component';
 import { TravelPreferencesComponent } from "../../components/travel-preferences/travel-preferences.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +14,14 @@ import { TravelPreferencesComponent } from "../../components/travel-preferences/
 })
 
 export class ProfileComponent {
+
+  constructor(private router: Router) { }
+  currentUser = localStorage.getItem('currentUser')
+  ngOnInit() {
+    if (!this.currentUser) {
+      this.router.navigate(['/login'])
+    }
+  }
   modoPerfil: 'perfil' | 'documentos' | 'preferencias' = 'perfil';
 
   mostrarPerfil() {

@@ -22,7 +22,11 @@ export class AdminComponent {
   flighToEdit: FlightComplete = {} as FlightComplete;
   airports: { id: string, text: string }[] = [];
   aircrafts: { id: string, text: string }[] = [];
+  currentUser = localStorage.getItem('currentUser')
   ngOnInit() {
+    if (!this.currentUser) {
+      this.router.navigate(['/login'])
+    }
     this.flighService.getAllFlights().subscribe((flights) => {
       console.log(flights);
       this.flights = flights;

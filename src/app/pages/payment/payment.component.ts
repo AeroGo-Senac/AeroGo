@@ -7,6 +7,7 @@ import type { Flight, FlightComplete } from '../../../types';
 import { Router } from '@angular/router';
 import { UserService } from '../../core/services/user.service';
 import type { User } from '../../../types';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-payment',
@@ -24,11 +25,12 @@ export class PaymentComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private flightService: FlightService,
-      private userService: UserService,
-    private router: Router
-  ) {}
+    private userService: UserService,
+    private router: Router,
+    private toast: ToastrService,
+  ) { }
 
-    installmentsOptions: { label: string, value: string }[] = [];
+  installmentsOptions: { label: string, value: string }[] = [];
 
   ngOnInit() {
     const flightNumber = this.route.snapshot.paramMap.get('flight_number');
@@ -74,7 +76,7 @@ export class PaymentComponent implements OnInit {
     this.subtotal = total.toFixed(2);
   }
 
-  selInstallments(event: Event){
+  selInstallments(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
     this.subtotal = selectElement.value;
   }
@@ -85,31 +87,31 @@ export class PaymentComponent implements OnInit {
   inputCVV = "";
   txtError = "";
 
-validate() {
-  if(this.cardNumber === "" || this.cardName === "" || this.inputValidity === "" || this.inputCVV === ""){
-    this.txtError = "Preencha todos os campos";
-  } else {
-    this.txtError = "";
-    alert(`Pagamento realizado com sucesso!\nValor: R$ ${this.subtotal}\nNúmero do Cartão: ${this.cardNumber}`);
+  validate() {
+    if (this.cardNumber === "" || this.cardName === "" || this.inputValidity === "" || this.inputCVV === "") {
+      this.txtError = "Preencha todos os campos";
+    } else {
+      this.txtError = "";
+      this.toast.success('Pagamento realizado com sucesso!', 'Sucesso');
 
-    // Pegue o e-mail do objeto currentUser corretamente
-    const currentUser = localStorage.getItem('currentUser');
-    const email = currentUser ? JSON.parse(currentUser).email : null;
-    if (email) {
-      this.userService.getUserByEmail(email).subscribe(users => {
-        if (users.length > 0) {
-          const user: User = users[0];
-          const updatedUser: User = {
-            ...user,
-            number_of_bookings: (user.number_of_bookings ?? 0) + 1
-          };
-          this.userService.updateUser(updatedUser).subscribe(() => {
-            localStorage.setItem('currentUser', JSON.stringify(updatedUser));
-            console.log('Número de viagens atualizado!');
-          });
-        }
-      });
+      const currentUser = localStorage.getItem('currentUser');
+      const email = currentUser ? JSON.parse(currentUser).email : null;
+      if (email) {
+        this.userService.getUserByEmail(email).subscribe(users => {
+          if (users.length > 0) {
+            const user: User = users[0];
+            const updatedUser: User = {
+              ...user,
+              number_of_bookings: (user.number_of_bookings ?? 0) + 1
+            };
+            this.userService.updateUser(updatedUser).subscribe(() => {
+              localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+              console.log('Número de viagens atualizado!');
+              this.router.navigate(['/profile']);
+            });
+          }
+        });
+      }
     }
   }
-}
 }

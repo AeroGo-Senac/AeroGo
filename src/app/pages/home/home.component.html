@@ -98,20 +98,21 @@
       </div>
       <div class="container-trip-off-infoTrip">
 
+        @for(flight of flights; track flight.id) {
         <div class="tripInfo">
-          <h3 class="title">Santiago Chine</h3>
+          <h3 class="title">{{flight.destination_airport.country}}</h3>
           <div class="info-voo">
             <p class="desc-info-voo">Recomendado para você</p>
             <span> Voo com conexão</span>
           </div>
-          <img src="https://cdn.getyourguide.com/img/location/5cced31b8e609.jpeg/88.jpg" alt="Imagem">
+          <img [src]="flight?.imgURL" alt="Imagem">
           <div class="info-voo-bottom">
-            <div class="info-title">Santiago do Chile</div>
-            <p class="info-date-voo"> Somente ida 24/04/25 </p>
+            <div class="info-title">{{flight.destination_airport.city}}</div>
+            <p class="info-date-voo"> Somente ida {{flight.arrival_date}} </p>
             <div class="prices">
               <div class="container-price">
                 <div class="desc-price">Preço a partir de</div>
-                <h2 class="price">R$ 685.18</h2>
+                <h2 class="price">R$ {{obterVooMaisBarato(flight.seat_classes)}}</h2>
                 <div class="rate-info">Taxas incluídas</div>
               </div>
               <span class="info-type">
@@ -120,52 +121,7 @@
             </div>
           </div>
         </div>
-
-        <div class="tripInfo">
-          <h3 class="title">Santiago Chine</h3>
-          <div class="info-voo">
-            <p class="desc-info-voo">Recomendado para você</p>
-            <span> Voo com conexão</span>
-          </div>
-          <img src="https://cdn.getyourguide.com/img/location/5cced31b8e609.jpeg/88.jpg" alt="Imagem">
-          <div class="info-voo-bottom">
-            <div class="info-title">Santiago do Chile</div>
-            <p class="info-date-voo"> Somente ida 24/04/25 </p>
-            <div class="prices">
-              <div class="container-price">
-                <div class="desc-price">Preço a partir de</div>
-                <h2 class="price">R$ 685.18</h2>
-                <div class="rate-info">Taxas incluídas</div>
-              </div>
-              <span class="info-type">
-                <p> Economy </p>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="tripInfo">
-          <h3 class="title">Santiago Chine</h3>
-          <div class="info-voo">
-            <p class="desc-info-voo">Recomendado para você</p>
-            <span> Voo com conexão</span>
-          </div>
-          <img src="https://cdn.getyourguide.com/img/location/5cced31b8e609.jpeg/88.jpg" alt="Imagem">
-          <div class="info-voo-bottom">
-            <div class="info-title">Santiago do Chile</div>
-            <p class="info-date-voo"> Somente ida 24/04/25 </p>
-            <div class="prices">
-              <div class="container-price">
-                <div class="desc-price">Preço a partir de</div>
-                <h2 class="price">R$ 685.18</h2>
-                <div class="rate-info">Taxas incluídas</div>
-              </div>
-              <span class="info-type">
-                <p> Economy </p>
-              </span>
-            </div>
-          </div>
-        </div>
+        }
 
       </div>
     </div>

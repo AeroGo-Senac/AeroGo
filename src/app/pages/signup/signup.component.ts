@@ -5,6 +5,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { UserService } from '../../core/services/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../../types';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { User } from '../../../types';
 })
 export class SignupComponent {
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, private toast: ToastrService) { }
 
   user: User = {
     id: '',
@@ -82,11 +83,13 @@ export class SignupComponent {
 
     if (!this.user.name || !this.user.email || !this.user.password_hash || !this.confirmPassword || !this.user.telefone || !this.user.address.cep || !this.user.address.street) {
       this.message = 'Por favor, preencha todos os campos.';
+      this.toast.error('Por favor, preencha todos os campos.', 'Erro');
       return;
     }
 
     if (this.user.password_hash !== this.confirmPassword) {
       this.message = 'As senhas não coincidem. Por favor, digite novamente.';
+      this.toast.error('As senhas não coincidem. Por favor, digite novamente.', 'Erro');
       return;
     }
 
@@ -94,14 +97,12 @@ export class SignupComponent {
       (existingUsers) => {
         if (existingUsers.length > 0) {
           this.message = 'Este e-mail já está cadastrado. Por favor, use outro e-mail.';
+          this.toast.error('Este e-mail já está cadastrado. Por favor, use outro e-mail.', 'Erro');
 
         } else {
           this.userService.newUser(this.user).subscribe(
             (response) => {
-              console.log('Registro bem-sucedido:', response);
-              alert(`Cadastro realizado com sucesso! Bem-vindo, ${response.name}!`);
-
-              console.log('Usuário cadastrado e salvo no localStorage:', response.name);
+              this.toast.success('Cadastro realizado com sucesso!', 'Sucesso');
               this.router.navigate(['/login']);
             },
           );

@@ -45,7 +45,7 @@
               <input type="date" id="data-volta" placeholder="dd/mm/aaaa">
             </div>
             <div class="search-button">
-            <button >Procurar</button>
+              <button>Procurar</button>
             </div>
           </div>
 
@@ -54,8 +54,18 @@
         <section class="date-picker-scroll">
           <h4>Escolha sua data</h4>
           <div class="scroll-arrows">
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
-            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-left-icon lucide-arrow-left">
+                <path d="m12 19-7-7 7-7" />
+                <path d="M19 12H5" />
+              </svg></button>
+            <button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-right-icon lucide-arrow-right">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg></button>
           </div>
           <div class="date-cards">
             <div class="date-card">
@@ -91,7 +101,12 @@
 
         <div class="filter">
           <app-filter></app-filter>
-          <app-flight-card></app-flight-card>
+          <div class="flight-container">
+
+            @for(flight of flights; track $index) {
+            <app-flight-card [flight]="flight"></app-flight-card>
+            }
+          </div>
         </div>
 
 

@@ -124,6 +124,7 @@ interface FlightComplete extends Flight {
   aircraft: Aircraft;
   seat_classes: SeatClass[];
   packages: Package[];
+  imgURL?: string;
 }
 
 interface Item {

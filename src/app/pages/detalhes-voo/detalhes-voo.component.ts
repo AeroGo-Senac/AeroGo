@@ -18,12 +18,23 @@ export class DetalhesVooComponent implements OnInit {
     private route: ActivatedRoute,
     private flightService: FlightService,
     private router: Router
-  ) {}
+  ) { }
 
   goToPayment(seatType: string) {
     if (this.flight) {
       this.router.navigate(['/payment', this.flight.flight_number], { queryParams: { seat: seatType } });
     }
+  }
+
+  calcularDuracaoVoo(): string {
+    const departureDate = new Date(this.flight?.departure_date + 'T' + this.flight?.departure_time);
+    const arrivalDate = new Date(this.flight?.arrival_date + 'T' + this.flight?.arrival_time);
+    const duration = new Date(arrivalDate.getTime() - departureDate.getTime());
+
+    const hours = duration.getUTCHours();
+    const minutes = duration.getUTCMinutes();
+
+    return `${hours}h ${minutes}m`;
   }
 
 

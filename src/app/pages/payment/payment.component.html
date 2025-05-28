@@ -102,11 +102,13 @@
                 <div class="card-info">
                   <div class="card-name">
                     <label for="cardName">Nome no Cartão</label>
-                    <input type="text" name="cardName" id="cardName" placeholder="Nome conforme o cartão" [(ngModel)]="cardName">
+                    <input type="text" name="cardName" id="cardName" placeholder="Nome conforme o cartão"
+                      [(ngModel)]="cardName">
                   </div>
                   <div class="validity">
                     <label for="inputValidity">Validade</label>
-                    <input type="text" name="inputValidity" id="inputValidity" placeholder="MM/AA" [(ngModel)]="inputValidity">
+                    <input type="text" name="inputValidity" id="inputValidity" placeholder="MM/AA"
+                      [(ngModel)]="inputValidity">
                   </div>
                   <div class="cvv">
                     <label for="inputCVV">CVV</label>
@@ -116,9 +118,10 @@
                 <div class="installments">
                   <label for="selInstallments">Parcelas</label>
                   <select name="selInstallments" id="selInstallments" (change)="selInstallments($event)">
-                      @for (item of installmentsOptions; track item.label) {
-                          <option [value]="item.value" selected>{{ item.label }} sem juros</option>
-                      }
+                    @for (item of installmentsOptions; track item.label) {
+                    <option [value]="item.value" [selected]="item === installmentsOptions[0]">{{ item.label }} sem juros
+                    </option>
+                    }
                   </select>
                 </div>
               </div>
@@ -129,39 +132,39 @@
               <h2>Resumo da Compra</h2>
 
               @if (flight) {
-                <div class="flight-details">
-                  <div class="flight-info">
-                    <span>Voo:</span> <span>{{flight.flight_number}}</span>
-                  </div>
-                  <div class="flight-info">
-                    <span>Trecho:</span> <span>São → Miami</span>
-                  </div>
-                  <div class="flight-info">
-                    <span>Classe:</span> <span>
-                      {{
-                        seatType === 'economic' ? 'Econômica' :
-                        seatType === 'premium' ? 'Premium' :
-                        seatType === 'executive' ? 'Executiva' : ''
-                      }}
-                    </span>
-                  </div>
-                  <div class="flight-info">
-                    <span>Passageiros:</span> <span>1</span>
-                  </div>
+              <div class="flight-details">
+                <div class="flight-info">
+                  <span>Voo:</span> <span>{{flight.flight_number}}</span>
                 </div>
-                <div class="subtotal">
-                  <span>Subtotal</span> <span id="subTotal">R$ {{ subtotal }}</span>
+                <div class="flight-info">
+                  <span>Trecho:</span> <span>São → Miami</span>
                 </div>
+                <div class="flight-info">
+                  <span>Classe:</span> <span>
+                    {{
+                    seatType === 'economic' ? 'Econômica' :
+                    seatType === 'premium' ? 'Premium' :
+                    seatType === 'executive' ? 'Executiva' : ''
+                    }}
+                  </span>
+                </div>
+                <div class="flight-info">
+                  <span>Passageiros:</span> <span>1</span>
+                </div>
+              </div>
+              <div class="subtotal">
+                <span>Subtotal</span> <span id="subTotal">R$ {{ subtotal }}</span>
+              </div>
 
-                <div class="price-details">
-                  <div class="total">
-                    <span><strong>Total</strong></span>
-                    <span><strong>R$ {{total}}</strong></span>
-                  </div>
-                  <p class="txtInstallments">em até 10x sem juros</p>
+              <div class="price-details">
+                <div class="total">
+                  <span><strong>Total</strong></span>
+                  <span><strong>R$ {{total}}</strong></span>
                 </div>
+                <p class="txtInstallments">em até 10x sem juros</p>
+              </div>
               }
-          
+
               <button class="finalize-button" (click)="validate()">
                 <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_179_126)">
@@ -182,9 +185,9 @@
               <div class="txtBox">
                 <p class="txtError">{{txtError}}</p>
               </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

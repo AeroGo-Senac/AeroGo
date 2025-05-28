@@ -8,14 +8,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [HeaderComponent, FormsModule ],
+  imports: [HeaderComponent, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 
 export class LoginComponent {
 
-constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) { }
 
 
   user = {
@@ -44,12 +44,16 @@ constructor(private userService: UserService, private router: Router) { }
         if (response.length > 0) {
           const user: User = response[0];
           localStorage.setItem('currentUser', JSON.stringify({
-          id: user.id,
-          name: user.name,
-          email: user.email
-        }));
+            id: user.id,
+            name: user.name,
+            email: user.email
+          }));
           alert(`Bem-vindo, ${user.name}!`);
-          this.router.navigate(['']);
+          if (user.is_admin) {
+            this.router.navigate(['/admin']);
+            return;
+          }
+          this.router.navigate(['/profile']);
         } else {
           this.message = 'Email ou senha inválidos';
         }

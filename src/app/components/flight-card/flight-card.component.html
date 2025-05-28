@@ -9,16 +9,16 @@
       </svg>
       <div class="box-two">
         <div class="ori-dest">
-          <h1> GRU </h1>
+          <h1> {{flight.origin_airport.code}} </h1>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4.16663 10H15.8333" stroke="#64748B" stroke-width="1.66667" stroke-linecap="round"
               stroke-linejoin="round" />
             <path d="M10 4.16666L15.8333 9.99999L10 15.8333" stroke="#64748B" stroke-width="1.66667"
               stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <h1> MIA </h1>
+          <h1> {{flight.destination_airport.code}} </h1>
         </div>
-        <span class="flight-info"> AeroGo Airlines • LA1234</span>
+        <span class="flight-info"> AeroGo Airlines • {{flight.flight_number}}</span>
         <span class="flight-info">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -28,35 +28,33 @@
               stroke-linejoin="round" />
           </svg>
 
-          <p>4h 15min</p>
+          <p>{{calcularDuracaoVoo()}}</p>
         </span>
       </div>
-      <img
-        src="https://www.tripsavvy.com/thmb/dw1scZ-PkJacGr0hTCLL4nRSDi4=/2121x1413/filters:fill(auto,1)/south-beach-miami-from-south-pointe-park--florida--usa-1137673992-0dc4c290e2764b178a5ab5be28dbd2d7.jpg"
-        alt="" class="airplane" />
+      <img [src]="this.imgUrl" alt="" class="airplane" />
       <div class="box-three">
-        <h1 class="price"> R$ 1899,98</h1>
-        <p class="class">Premium</p>
-        <button class="btn">Selecionar</button>
+        <h1 class="price"> R$ {{flight.seat_classes[obterIndexVooMaisBarato()].price}}</h1>
+        <p class="class"> {{flight.seat_classes[obterIndexVooMaisBarato()].type}}</p>
+        <button type="button" (click)="selectVoo(flight.flight_number)" class="btn">Selecionar</button>
       </div>
     </div>
 
     <div class="classes">
       <h1>Classes disponíveis</h1>
       <div class="class-box">
+        @for(class of flight.seat_classes; track $index) {
+        @for (type of seatTypes; track $index) {
+        @if(type.value === class.type) {
         <div class="class-item">
-          <h1>Premium</h1>
-          <p>Disponível</p>
+          <h1>
+            {{class.type}}
+          </h1>
+          <p>R$ {{class.price}}</p>
         </div>
+        }
 
-        <div class="class-item">
-          <h1>Executiva</h1>
-          <p>Disponível</p>
-        </div>
-        <div class="class-item">
-          <h1>Economica</h1>
-          <p>Disponível</p>
-        </div>
+        }
+        }
       </div>
     </div>
   </div>
